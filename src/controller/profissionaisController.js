@@ -2,6 +2,7 @@ const profissionais = require("../models/profissionais");
 
 const create = (req, res) => {
   const profissional = new profissionais(req.body);
+  console.log(req.body);
   profissional.save(function (err) {
     if (err) {
       return res.status(500).send({ message: err.message });
