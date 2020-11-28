@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGODB_URL, {
 const db = mongoose.connection;
 db.on("error", console.log.bind(console, "connection error:"))
 db.once("open", function () {
-    console.log("successful connection!")
+    console.log("Successful connection!")
 });
 
 const index = require("./routes/index")
@@ -31,4 +31,6 @@ app.use(function (req, res, next) {
 })
 
 app.use("/", index);
-app.use("/profissionais", profissionais)
+app.use("/profissionais", profissionais);
+
+module.exports = app;
