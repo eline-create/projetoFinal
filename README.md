@@ -1,10 +1,10 @@
-# Projeto Final -  Conclusão de Curso
+# Projeto Livre_Eline Pimentel
 
-Projeto final do Bootcamp da Reprograma em Desenvolvimento Web em Back-End.
-ATENÇÃO: Texto em construção e formatação.
+Projeto final do curso de Desenvolvimento Web em Back-End realizado pelo bootcamp da Reprograma em parceria com o M.I.N.As / Porto Digital.
 
+**ATENÇÃO: Texto em construção e formatação.**
 
-<h1><center>Negros em Ação!</center></h1>
+![Logotipo com o nome do projeto](./images/logo2.png)
 
 Banco de Dados que reúne profissionais negrxs de diversas áreas em um só lugar!
 
@@ -24,14 +24,23 @@ O banco de dados está rodando na porta 8080, para as rotas serem acessadas loca
 
 Caso queira saber como fechar uma porta em uso ou descobrir se ela está sendo utilizada, é possível através deste link: https://medium.com/@daniloassis.ti/como-finalizar-um-processo-em-aberto-no-windows-525652152902
 
-1.	GET: GetAll - /blacksAction – Listar todos os profissionais;
-2.	GET: GetById - /blacksAction/:id – Listar os profissionais pelo id;
-3.	GET: GetByGenre - /blacksAction/:genre – Listar os profissionais cadastrados a partir do gênero;
-4.	GET: GetByArea - /blacksAction/:área – Listar os profissionais por área de atuação;
-5.	POST: PostNew - /blacksAction – Adicionar um novo profissional;
-6.	PATCH: UpdateBlack - /blacksAction/:name – Atualizar algum campo do registro por nome;
-7.	PUT: Replace - /blacksAction/:id – Substituir todas as informações de um registro pelo id.
-8.	DELETE:  - Remover um profissional através de seu nome.
+**Rotas/Métodos Principais**
+
+1. CreateNew(POST) - /blacksAction – Adicionar um novo profissional;
+2. ReadAll(GET) - /blacksAction – Listar todos os profissionais;
+3. UpdateBlack(PACTH) - /blacksAction/:name – Atualizar algum campo do registro por nome;
+4. Delete(DELETE)  - /:id - Remover um profissional através de seu nome.
+
+***Rotas/Métodos secundários***
+
+1.GetById(GET) - /blacksAction/:id – Listar os profissionais pelo id;
+2.GetByGenre(GET) - /blacksAction/:genre – Listar os profissionais cadastrados a partir do gênero;
+3.GetByArea(GET) - /blacksAction/:área – Listar os profissionais por área de atuação;
+4.Replace (PUT) - /blacksAction/:id – Substituir todas as informações de um registro pelo id.
+
+<h2></h2>
+
+
 
 ### Referências:
 
