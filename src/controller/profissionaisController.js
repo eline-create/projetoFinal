@@ -20,11 +20,19 @@ const readAll = (req, res) => {
   });
 };
 
-const updateById = (req, res) => {};
+const updateById = (req, res) => {
+  const id = req.params.id;
+  profissionais.find({ id }, { $set: req.body }, function (err) {
+    if(err) {
+      return res.status(500).send( { message: err.message });
+    }
+     return res.status(200).send({ message: 'Registro alterado com sucesso', status: "Updated"});
+  })
+}
 
 const deleteById = (req, res) => {
   const _id = req.params.id;
-  profissionais.find({ _id }, function (err, profissional) {
+  profissionais.find({ _id }, function (err, profissionais) {
     if (profissionais.length > 0) {
       profissionais.deleteMany({ _id }, function (err) {
         if (err) {
