@@ -14,5 +14,7 @@ const profissionaisSchema =  new mongoose.Schema({
      versionKey: false
  });
 
- module.exports = mongoose.model("profissionais", profissionaisSchema);
+const profissionais = mongoose.model('profissionais', profissionaisSchema);
+
+module.exports = profissionais;
  

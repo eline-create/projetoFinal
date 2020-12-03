@@ -4,7 +4,7 @@ Projeto final do curso de Desenvolvimento Web em Back-End realizado pelo bootcam
 
 **ATENÇÃO: Texto em construção e formatação.**
 
-![Logotipo com o nome do projeto](./images/logo2.png)
+![Logotipo com o nome do projeto](./images/logo3.png)
 
 Banco de Dados que reúne profissionais negrxs de diversas áreas em um só lugar!
 
@@ -40,7 +40,7 @@ Caso queira saber como fechar uma porta em uso ou descobrir se ela está sendo u
 
 <h2></h2>
 
-
+Para gerar a chave privada, usar o site: https://travistidwell.com/jsencrypt/demo/
 
 ### Referências:
 
