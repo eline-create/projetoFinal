@@ -1,6 +1,6 @@
 const profissionais = require("../models/profissionais");
-// const SECRET = process.env.SECRET;
-// const jwt = require('jsonwebtoken');
+const SECRET = process.env.SECRET;
+const jwt = require('jsonwebtoken');
 
 const create = (req, res) => {
   const profissional = new profissionais(req.body);

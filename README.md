@@ -2,11 +2,24 @@
 
 Projeto final do curso de Desenvolvimento Web em Back-End realizado pelo bootcamp da Reprograma em parceria com o M.I.N.As / Porto Digital.
 
-**ATENÇÃO: Texto em construção e formatação.**
+**ATENÇÃO: Texto em construção e formatação**
 
 ![Logotipo com o nome do projeto](./images/logo3.png)
 
 Banco de Dados que reúne profissionais negrxs de diversas áreas em um só lugar!
+
+
+<h2>Documentação</h2>
+
+Para este projeto rodar, você precisará:
+
+**Programas instalados**
+
+
+***Comandos de Inicialização***
+
+
+
 
 <h2>Um pouco de história e contextualização</h2>
 

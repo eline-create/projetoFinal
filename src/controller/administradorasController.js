@@ -3,6 +3,20 @@ const administradoras = require("../models/administradoras");
 const SECRET = process.env.SECRET;
 const bcrypt = require("bcrypt");
 
+const createAdministradora = (req, res) => {
+  console.log(req.body)
+  const senhaComHash = bcrypt.hashSync(req.body.senha, 10);
+  req.body.senha = senhaComHash;
+  const administradora = new administradoras(req.body);
+
+  administradora.save(function (err) {
+    if (err) {
+      return res.status(500).send({ message: err.message });
+    }
+    return res.status(201).send(administradora.toJSON());
+  });
+};
+
 const getAllAdministradoras = (req, res) => {
   const authHeader = req.get("authorization");
   if (!authHeader) {
@@ -20,19 +34,6 @@ const getAllAdministradoras = (req, res) => {
       return res.status(500).send({ message: err.message });
     }
     return res.status(200).send(administradoras);
-  });
-};
-
-const createAdministradora = (req, res) => {
-  const senhaComHash = bcrypt.hashSync(req.body.senha, 10);
-  req.body.senha = senhaComHash;
-  const administradoras = new administradoras(req.body);
-
-  administradoras.save(function (err) {
-    if (err) {
-      return res.status(500).send({ message: err.message });
-    }
-    return res.status(201).send(administradoras);
   });
 };
 

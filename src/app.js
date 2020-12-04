@@ -17,6 +17,7 @@ db.once("open", function () {
 
 const index = require("./routes/index");
 const profissionais = require("./routes/profissionaisRoute");
+const administradoras = require("./routes/administradorasRoute");
 
 app.use(bodyParser.json());
 
@@ -31,5 +32,6 @@ app.use(function (req, res, next) {
 
 app.use("/", index);
 app.use("/profissionais", profissionais);
+app.use("/administradoras", administradoras);
 
 module.exports = app;
