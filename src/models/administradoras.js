@@ -1,12 +1,24 @@
-const mongoose =  require("mongoose");
+const mongoose = require("mongoose");
+const { profissionaisSchema } = require("./profissionais");
 
-const administradorasSchema =  new mongoose.Schema({
+const administradorasSchema = new mongoose.Schema(
+  {
+    id: { type : Number },
     name: { type: String },
     email: { type: String },
-    senha: { type: String}
- },
- {
-     versionKey: false
- });
+    senha: { type: String },
+  },
+  {
+    versionKey: false,
+  }
+);
 
- module.exports = mongoose.model("administradoras", administradorasSchema);
+const administradorasModel = mongoose.model(
+  "administradoras",
+  administradorasSchema
+);
+
+module.exports = {
+  administradorasModel,
+  administradorasSchema,
+};

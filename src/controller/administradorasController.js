@@ -1,63 +1,108 @@
-const jwt = require("jsonwebtoken");
 const administradoras = require("../models/administradoras");
+const jwt = require("jsonwebtoken");
 const SECRET = process.env.SECRET;
 const bcrypt = require("bcrypt");
 
-const createAdministradora = (req, res) => {
-  console.log(req.body)
-  const senhaComHash = bcrypt.hashSync(req.body.senha, 10);
-  req.body.senha = senhaComHash;
-  const administradora = new administradoras(req.body);
+const createAdministradora = (request, response) => {
+  console.log(request.body);
+  const senhaComHash = bcrypt.hashSync(request.body.senha, 10);
+  request.body.senha = senhaComHash;
+  const administradora = new administradoras(request.body);
 
-  administradora.save(function (err) {
-    if (err) {
-      return res.status(500).send({ message: err.message });
+  administradora.save(function (error) {
+    if (error) {
+      return response.status(500).send({ message: error.message });
     }
-    return res.status(201).send(administradora.toJSON());
+    return response.status(201).send(administradora.toJSON());
   });
 };
 
-const getAllAdministradoras = (req, res) => {
-  const authHeader = req.get("authorization");
+const getAllAdministradoras = (request, response) => {
+  const authHeader = request.get("authorization");
   if (!authHeader) {
-    return res.status(401).send("Você está autorizado?");
+    return response.status(401).send("Você está autorizado?");
   }
   const token = authHeader.split(" ")[1];
 
-  jwt.verify(token, SECRET, function (err) {
-    if (err) {
-      return res.status(403).send("Não foi possível");
+  jwt.verify(token, SECRET, function (error) {
+    if (error) {
+      return response.status(403).send("Você necessita de um token de acesso!");
     }
   });
-  administradoras.find((err, administradoras) => {
-    if (err) {
-      return res.status(500).send({ message: err.message });
+  administradoras.find((error, administradoras) => {
+    if (error) {
+      return response.status(500).send({ message: error.message });
     }
-    return res.status(200).send(administradoras);
+    return response.status(200).send(administradoras);
   });
 };
 
-const loginAdministradora = (req, res) => {
-  administradoras.findOne({ email: req.body.email }, (err, administradora) => {
-    if (!administradora) {
-      return res
-        .status(404)
-        .send(`E-mail da Administradora ${req.body.email} não encontrado`);
+const loginAdministradora = (request, response) => {
+  administradoras.findOne(
+    { email: request.body.email },
+    (error, administradora) => {
+      if (!administradora) {
+        return response
+          .status(404)
+          .send(
+            `E-mail da Administradora ${request.body.email} não encontrado`
+          );
+      }
+      const senhaValida = bcrypt.compareSync(
+        request.body.senha,
+        administradora.senha
+      );
+      if (!senhaValida) {
+        return response.status(403).send("Senha Incorreta");
+      }
+      const token = jwt.sign({ email: request.body.email }, SECRET);
+      return response.status(200).send(token);
     }
-    const senhaValida = bcrypt.compareSync(
-      req.body.senha,
-      administradora.senha
-    );
-    if (!senhaValida) {
-      return res.status(403).send("Senha Incorreta");
+  );
+};
+
+const updateAdministradora = (request, response) => {
+  const id = request.params.id;
+  administradora.find({ id }, (error, adminsitradora) => {
+    if(administradora.length > 0){
+      administradora.updateOne({ id }, { $set: request.body }, (error) => { 
+        if(error) {
+          return response.status(500).send({ message: error.message })
+        }
+        return response.status(200).send({ message: "Registro alterado com sucesso"})
+      })
+    } else {
+      return response.status(200).send({ message: "Esse id não possui registro para ser atualizado" })
     }
-    const token = jwt.sign({ email: req.body.email }, SECRET);
-    return res.status(200).send(token);
+  })
+};
+
+const deleteAdministradora = (request, response) => {
+  const id = request.params.id;
+  administradora.find({ id }, (error, administradora) => {
+    if (administradora.length > 0) {
+      administradoras.deleteOne({ id }, (error) => {
+        if (error) {
+          response
+            .status(500)
+            .send({ 
+              message: error.message 
+            });
+        } else
+        response
+          .status(200)
+          .send({ 
+            message: "Removed Admin",
+          });
+      })
+    } 
   });
 };
 
 module.exports = {
-  getAllAdministradoras,
   createAdministradora,
+  getAllAdministradoras,
   loginAdministradora,
+  updateAdministradora,
+  deleteAdministradora,
 };

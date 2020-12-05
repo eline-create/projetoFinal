@@ -5,5 +5,7 @@ const controller = require("../controller/administradorasController");
 router.get("/", controller.getAllAdministradoras);
 router.post("/", controller.createAdministradora);
 router.post("/login", controller.loginAdministradora);
+router.patch("/:id", controller.updateAdministradora);
+router.delete("/:id", controller.deleteAdministradora);
 
 module.exports = router;

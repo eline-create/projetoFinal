@@ -3,7 +3,7 @@ const router = express.Router();
 const controller = require("../controller/profissionaisController");
 
 router.post('/', controller.create);
-router.get('/', controller.readAll);
+router.get('/', controller.getAll);
 router.put('/:id', controller.updateById);
 router.delete('/:id', controller.deleteById);
 
