@@ -18,7 +18,4 @@ const profissionaisSchema = new mongoose.Schema(
 
 const profissionaisModel = mongoose.model("profissionais", profissionaisSchema);
 
-module.exports = {
-  profissionaisModel,
-  profissionaisSchema,
-};
+module.exports = { profissionaisModel, profissionaisSchema };

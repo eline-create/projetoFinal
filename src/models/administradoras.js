@@ -6,19 +6,14 @@ const administradorasSchema = new mongoose.Schema(
     id: { type : Number },
     name: { type: String },
     email: { type: String },
-    senha: { type: String },
+    senha: { type: String }, 
+    profissionais: [ profissionaisSchema ]
   },
   {
     versionKey: false,
   }
 );
 
-const administradorasModel = mongoose.model(
-  "administradoras",
-  administradorasSchema
-);
+const administradorasModel = mongoose.model("administradoras", administradorasSchema);
 
-module.exports = {
-  administradorasModel,
-  administradorasSchema,
-};
+module.exports = { administradorasModel, administradorasSchema };

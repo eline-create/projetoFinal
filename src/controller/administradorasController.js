@@ -7,9 +7,10 @@ const createAdministradora = (request, response) => {
   console.log(request.body);
   const senhaComHash = bcrypt.hashSync(request.body.senha, 10);
   request.body.senha = senhaComHash;
-  const administradora = new administradoras(request.body);
 
-  administradora.save(function (error) {
+  const administradora = new administradoras.administradorasModel(request.body);
+
+  administradora.save((error) => {
     if (error) {
       return response.status(500).send({ message: error.message });
     }
@@ -29,7 +30,7 @@ const getAllAdministradoras = (request, response) => {
       return response.status(403).send("Você necessita de um token de acesso!");
     }
   });
-  administradoras.find((error, administradoras) => {
+  administradoras.administradorasModel.find((error, administradoras) => {
     if (error) {
       return response.status(500).send({ message: error.message });
     }
@@ -38,7 +39,7 @@ const getAllAdministradoras = (request, response) => {
 };
 
 const loginAdministradora = (request, response) => {
-  administradoras.findOne(
+  administradoras.administradorasModel.findOne(
     { email: request.body.email },
     (error, administradora) => {
       if (!administradora) {
@@ -63,9 +64,9 @@ const loginAdministradora = (request, response) => {
 
 const updateAdministradora = (request, response) => {
   const id = request.params.id;
-  administradora.find({ id }, (error, adminsitradora) => {
+  administradoras.administradorasModel.find({ id }, (error, administradora) => {
     if(administradora.length > 0){
-      administradora.updateOne({ id }, { $set: request.body }, (error) => { 
+      administradoras.administradorasModel.updateOne({ id }, { $set: request.body }, (error) => { 
         if(error) {
           return response.status(500).send({ message: error.message })
         }
@@ -79,9 +80,9 @@ const updateAdministradora = (request, response) => {
 
 const deleteAdministradora = (request, response) => {
   const id = request.params.id;
-  administradora.find({ id }, (error, administradora) => {
+  administradoras.administradorasModel.find({ id }, (error, administradora) => {
     if (administradora.length > 0) {
-      administradoras.deleteOne({ id }, (error) => {
+      administradoras.administradorasModel.deleteOne({ id }, (error) => {
         if (error) {
           response
             .status(500)
