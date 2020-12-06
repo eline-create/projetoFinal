@@ -4,13 +4,13 @@ const profissionaisSchema = new mongoose.Schema(
   {
     id: { type: Number },
     name: { type: String },
-    about: { type: String },
-    occupationArea: { type: String },
+    description: { type: String },
+    area: { type: String },
     subarea: { type: String },
-    serviceType: { type: String },
-    local: { type: String },
+    service: { type: String },
+    address: { type: String },
     contacts: { type: Array },
-    adminId: { type: Number }
+    adminId: { type: Number, required:true }
   },
   {
     versionKey: false,
