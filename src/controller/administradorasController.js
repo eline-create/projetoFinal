@@ -18,6 +18,16 @@ const createAdministradora = (request, response) => {
   });
 };
 
+//Para um Administradora cadastrar um profissional
+
+// const createProfissional = (request, response) => {
+//   const administradoraId = req.params.id;
+
+//   administradoras.findOne({ id: administradoraId})
+
+
+// };
+
 const getAllAdministradoras = (request, response) => {
   // const authHeader = request.get("authorization");
   // if (!authHeader) {
@@ -106,6 +116,7 @@ const deleteAdministradora = (request, response) => {
 
 module.exports = {
   createAdministradora,
+  //createProfissional,
   getAllAdministradoras,
   loginAdministradora,
   updateAdministradora,

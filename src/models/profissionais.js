@@ -10,6 +10,7 @@ const profissionaisSchema = new mongoose.Schema(
     serviceType: { type: String },
     local: { type: String },
     contacts: { type: Array },
+    adminId: { type: Number}
   },
   {
     versionKey: false,
