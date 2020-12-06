@@ -8,7 +8,7 @@ const createAdministradora = (request, response) => {
   const senhaComHash = bcrypt.hashSync(request.body.senha, 10);
   request.body.senha = senhaComHash;
 
-  const administradora = new administradoras.administradorasModel(request.body);
+  const administradora = new administradoras(request.body);
 
   administradora.save((error) => {
     if (error) {
@@ -17,16 +17,6 @@ const createAdministradora = (request, response) => {
     return response.status(201).send(administradora.toJSON());
   });
 };
-
-//Para um Administradora cadastrar um profissional
-
-// const createProfissional = (request, response) => {
-//   const administradoraId = req.params.id;
-
-//   administradoras.findOne({ id: administradoraId})
-
-
-// };
 
 const getAllAdministradoras = (request, response) => {
   // const authHeader = request.get("authorization");
@@ -40,7 +30,7 @@ const getAllAdministradoras = (request, response) => {
   //     return response.status(403).send("Você necessita de um token de acesso!");
   //   }
   // });
-  administradoras.administradorasModel.find((error, administradoras) => {
+  administradoras.find((error, administradoras) => {
     if (error) {
       return response.status(500).send({ message: error.message });
     }
@@ -49,7 +39,7 @@ const getAllAdministradoras = (request, response) => {
 };
 
 const loginAdministradora = (request, response) => {
-  administradoras.administradorasModel.findOne(
+  administradoras.findOne(
     { email: request.body.email },
     (error, administradora) => {
       if (!administradora) {
@@ -74,20 +64,16 @@ const loginAdministradora = (request, response) => {
 
 const updateAdministradora = (request, response) => {
   const id = request.params.id;
-  administradoras.administradorasModel.find({ id }, (error, administradora) => {
+  administradoras.find({ id }, (error, administradora) => {
     if (administradora.length > 0) {
-      administradoras.administradorasModel.updateOne(
-        { id },
-        { $set: request.body },
-        (error) => {
-          if (error) {
-            return response.status(500).send({ message: error.message });
-          }
-          return response
-            .status(200)
-            .send({ message: "Registro alterado com sucesso" });
+      administradoras.updateOne({ id }, { $set: request.body }, (error) => {
+        if (error) {
+          return response.status(500).send({ message: error.message });
         }
-      );
+        return response
+          .status(200)
+          .send({ message: "Registro alterado com sucesso" });
+      });
     } else {
       return response
         .status(200)
@@ -98,9 +84,9 @@ const updateAdministradora = (request, response) => {
 
 const deleteAdministradora = (request, response) => {
   const id = request.params.id;
-  administradoras.administradorasModel.find({ id }, (error, administradora) => {
+  administradoras.find({ id }, (error, administradora) => {
     if (administradora.length > 0) {
-      administradoras.administradorasModel.deleteMany({ id }, (error) => {
+      administradoras.deleteMany({ id }, (error) => {
         if (error) {
           response.status(500).send({
             message: error.message,
@@ -116,7 +102,6 @@ const deleteAdministradora = (request, response) => {
 
 module.exports = {
   createAdministradora,
-  //createProfissional,
   getAllAdministradoras,
   loginAdministradora,
   updateAdministradora,

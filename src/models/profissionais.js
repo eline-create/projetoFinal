@@ -10,13 +10,11 @@ const profissionaisSchema = new mongoose.Schema(
     serviceType: { type: String },
     local: { type: String },
     contacts: { type: Array },
-    adminId: { type: Number}
+    adminId: { type: Number }
   },
   {
     versionKey: false,
   }
 );
 
-const profissionaisModel = mongoose.model("profissionais", profissionaisSchema);
-
-module.exports = { profissionaisModel, profissionaisSchema };
+module.exports = mongoose.model("profissionais", profissionaisSchema);

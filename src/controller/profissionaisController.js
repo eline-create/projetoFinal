@@ -3,7 +3,7 @@ const SECRET = process.env.SECRET;
 const jwt = require("jsonwebtoken");
 
 const getAll = (request, response) => {
-  profissionais.profissionaisModel.find((error, profissional) => {
+  profissionais.find((error, profissional) => {
     if (error) {
       return response.status(500).send({ message: error.message });
     } else {
@@ -13,7 +13,7 @@ const getAll = (request, response) => {
 };
 
 const create = (request, response) => {
-  const profissional = new profissionais.profissionaisModel(request.body);
+  const profissional = new profissionais (request.body);
   console.log(request.body);
   profissional.save((error) => {
     if (error) {
@@ -29,9 +29,9 @@ const create = (request, response) => {
 const updateById = (request, response) => {
   const id = request.params.id;
 
-  profissionais.profissionaisModel.find({ id }, (error, profissional) => {
+  profissionais.find({ id }, (error, profissional) => {
     if (profissional.length > 0) {
-      profissionais.profissionaisModel.updateMany(
+      profissionais.updateMany(
         { id },
         { $set: request.body },
         (error) => {
@@ -56,9 +56,9 @@ const updateById = (request, response) => {
 
 const deleteById = (request, response) => {
   const id = request.params.id;
-  profissionais.profissionaisModel.find({ id }, (error, profissional) => {
+  profissionais.find({ id }, (error, profissional) => {
     if (profissional.length > 0) {
-      profissionais.profissionaisModel.deleteMany({ id }, (error) => {
+      profissionais.deleteMany({ id }, (error) => {
         if (error) {
           return response.status(500).send({
             message: error.message,
