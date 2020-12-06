@@ -19,17 +19,17 @@ const createAdministradora = (request, response) => {
 };
 
 const getAllAdministradoras = (request, response) => {
-  const authHeader = request.get("authorization");
-  if (!authHeader) {
-    return response.status(401).send("Você está autorizado?");
-  }
-  const token = authHeader.split(" ")[1];
+  // const authHeader = request.get("authorization");
+  // if (!authHeader) {
+  //   return response.status(401).send("Você está autorizado?");
+  // }
+  // const token = authHeader.split(" ")[1];
 
-  jwt.verify(token, SECRET, function (error) {
-    if (error) {
-      return response.status(403).send("Você necessita de um token de acesso!");
-    }
-  });
+  // jwt.verify(token, SECRET, function (error) {
+  //   if (error) {
+  //     return response.status(403).send("Você necessita de um token de acesso!");
+  //   }
+  // });
   administradoras.administradorasModel.find((error, administradoras) => {
     if (error) {
       return response.status(500).send({ message: error.message });
@@ -65,38 +65,42 @@ const loginAdministradora = (request, response) => {
 const updateAdministradora = (request, response) => {
   const id = request.params.id;
   administradoras.administradorasModel.find({ id }, (error, administradora) => {
-    if(administradora.length > 0){
-      administradoras.administradorasModel.updateOne({ id }, { $set: request.body }, (error) => { 
-        if(error) {
-          return response.status(500).send({ message: error.message })
+    if (administradora.length > 0) {
+      administradoras.administradorasModel.updateOne(
+        { id },
+        { $set: request.body },
+        (error) => {
+          if (error) {
+            return response.status(500).send({ message: error.message });
+          }
+          return response
+            .status(200)
+            .send({ message: "Registro alterado com sucesso" });
         }
-        return response.status(200).send({ message: "Registro alterado com sucesso"})
-      })
+      );
     } else {
-      return response.status(200).send({ message: "Esse id não possui registro para ser atualizado" })
+      return response
+        .status(200)
+        .send({ message: "Esse id não possui registro para ser atualizado" });
     }
-  })
+  });
 };
 
 const deleteAdministradora = (request, response) => {
   const id = request.params.id;
   administradoras.administradorasModel.find({ id }, (error, administradora) => {
     if (administradora.length > 0) {
-      administradoras.administradorasModel.deleteOne({ id }, (error) => {
+      administradoras.administradorasModel.deleteMany({ id }, (error) => {
         if (error) {
-          response
-            .status(500)
-            .send({ 
-              message: error.message 
-            });
+          response.status(500).send({
+            message: error.message,
+          });
         } else
-        response
-          .status(200)
-          .send({ 
+          response.status(200).send({
             message: "Removed Admin",
           });
-      })
-    } 
+      });
+    }
   });
 };
 
