@@ -1,13 +1,12 @@
 # Projeto Livre_Eline Pimentel
 
-Projeto final do curso de Desenvolvimento Web em Back-End realizado pelo bootcamp da Reprograma em parceria com o M.I.N.As / Porto Digital.
-
 **ATENÇÃO: Texto em construção e formatação**
+
+Projeto final do curso de Desenvolvimento Web em Back-End realizado pelo bootcamp da Reprograma em parceria com o M.I.N.As / Porto Digital.
 
 ![Logotipo com o nome do projeto](./images/logo3.png)
 
 Banco de Dados que reúne profissionais negrxs de diversas áreas em um só lugar!
-
 
 <h2>Documentação</h2>
 
@@ -17,8 +16,6 @@ Para este projeto rodar, você precisará:
 
 
 ***Comandos de Inicialização***
-
-
 
 
 <h2>Um pouco de história e contextualização</h2>
@@ -33,11 +30,12 @@ O IBGE pesquisa a cor ou raça da população brasileira com base na autodeclara
  
 <h2>Conhecendo as rotas da API</h2>
 
-O banco de dados está rodando na porta 8080, para as rotas serem acessadas localmente, faz-se necessário usar o endereço: http://localhost:8080/, para acessar o conteúdo. Após a barra, é necessário acrescentar os caminhos do que se deseja acessar. Importante saber: É possível que em outra máquina a porta esteja sendo utilizada em outro aplicação. Basta alterar para outra como: 3000, 8000, 8083.
+O banco de dados está rodando na porta 5002, para as rotas serem acessadas localmente, faz-se necessário usar o endereço: http://localhost:5002/, para acessar o conteúdo. Após a barra, é necessário acrescentar os caminhos do que se deseja acessar. 
+Importante saber: É possível que em outra máquina a porta esteja sendo utilizada em outro aplicação. Basta alterar para outra como: 3000, 8000, 8080, 8083.
 
 Caso queira saber como fechar uma porta em uso ou descobrir se ela está sendo utilizada, é possível através deste link: https://medium.com/@daniloassis.ti/como-finalizar-um-processo-em-aberto-no-windows-525652152902
 
-**Rotas/Métodos Principais**
+**Rotas/Métodos Principais** - Alterar texto das rotas -
 
 1. CreateNew(POST) - /blacksAction – Adicionar um novo profissional;
 2. ReadAll(GET) - /blacksAction – Listar todos os profissionais;

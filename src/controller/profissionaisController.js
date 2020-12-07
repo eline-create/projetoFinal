@@ -41,8 +41,7 @@ const updateById = (request, response) => {
             });
           }
           return response.status(200).send({
-            message: "Registro alterado com sucesso",
-            status: "Updated",
+            message: "Registro alterado com sucesso"            
           });
         }
       );
@@ -61,19 +60,16 @@ const deleteById = (request, response) => {
       profissionais.deleteMany({ id }, (error) => {
         if (error) {
           return response.status(500).send({
-            message: error.message,
-            status: "Falha no código!",
+            message: error.message
           });
         }
         return response.status(200).send({
-          message: "Profissional removido com sucesso!",
-          status: "Sucesso!",
+          message: "Profissional removido com sucesso!"        
         });
       });
     } else {
       return response.status(200).send({
-        message: "Não há profissionais para excluir",
-        status: "Banco de dados vazio",
+        message: "Não há profissionais com este para ser excluído"
       });
     }
   });
