@@ -35,19 +35,43 @@ Importante saber: É possível que em outra máquina a porta esteja sendo utiliz
 
 Caso queira saber como fechar uma porta em uso ou descobrir se ela está sendo utilizada, é possível através deste link: https://medium.com/@daniloassis.ti/como-finalizar-um-processo-em-aberto-no-windows-525652152902
 
-**Rotas/Métodos Principais** - Alterar texto das rotas -
 
-1. CreateNew(POST) - /blacksAction – Adicionar um novo profissional;
-2. ReadAll(GET) - /blacksAction – Listar todos os profissionais;
-3. UpdateBlack(PACTH) - /blacksAction/:name – Atualizar algum campo do registro por nome;
-4. Delete(DELETE)  - /:id - Remover um profissional através de seu nome.
+**Rotas/Métodos Principais** 
+## CRUD Profissionais ##
+---
+
+| Verbo            | Método        | Recurso                | Descrição                                      |
+| ------------     |------------   | ---------------------- | ------------------------------------------     |
+| 1.POST           | createNew     | `/profissionais`       | Cadastrar novo  profissional                   |
+| 2.GET            | selectAll     | `/profissionais`       | Retornar todos os profissionais                |
+| 3.PUT            | update        | `/profissionais/:id`   | Substituir todas as informações de um registro |
+| 4.DELETE         | delete        | `/profissionais/:id`   | Deletar um cadastro específico                 |
+
+---
 
 ***Rotas/Métodos secundários***
 
-1.GetById(GET) - /blacksAction/:id – Listar os profissionais pelo id;
-2.GetByGenre(GET) - /blacksAction/:genre – Listar os profissionais cadastrados a partir do gênero;
-3.GetByArea(GET) - /blacksAction/:área – Listar os profissionais por área de atuação;
-4.Replace (PUT) - /blacksAction/:id – Substituir todas as informações de um registro pelo id.
+---
+
+| Verbo              | Método             | Recurso                | Descrição                                              |
+| ------------       |------------        | ---------------------- | -----------------------------------------------------  |
+| 1.GET              | selectById         | `/profissionais`       | Retornar um profissional por id                        |
+| 2.GET              | selectByName       | `/profissionais`       | Retornar um profissional por nome                      |
+| 3.GET              | selectByAreaSubarea| `/profissionais/:id`   | Retornar os profissionais por área e subárea de atuação|
+| 4.GET              | selectByAddress    | `/profissionais/:id`   | Retornar um profissional por local de atuação          |
+| 5.PATCH            | replaceOne         | `/profissionais/:id`   | Atualizar um campo específico do cadastro              |
+---
+
+**Rotas/Métodos Principais** 
+## CRUD Administradoras ##
+
+| Verbo              | Método        | Recurso                | Descrição                               |
+| ------------       |------------   | ---------------------- | -------------------------------------   |
+| 1.GET              | createNew     | `/administradoras`     | Retornar todos os profissionais         |
+| 2.POST             | selectAll     | `/administradoras`     | Cadastrar novo profissional             |
+| 3.PUT              | update        | `/administradoras/:id` | Atualizar um cadastro específico        |
+| 4.DELETE           | delete        | `/profissionais/:id`   | Deletar um cadastro específico          |
+
 
 <h2></h2>
 

@@ -1,8 +1,9 @@
 const profissionais = require("../models/profissionais");
 const SECRET = process.env.SECRET;
 const jwt = require("jsonwebtoken");
+const { response, request } = require("../app");
 
-const getAll = (request, response) => {
+const selectAll = (request, response) => {
   profissionais.find((error, profissional) => {
     if (error) {
       return response.status(500).send({ message: error.message });
@@ -13,7 +14,7 @@ const getAll = (request, response) => {
 };
 
 const create = (request, response) => {
-  const profissional = new profissionais (request.body);
+  const profissional = new profissionais(request.body);
   console.log(request.body);
   profissional.save((error) => {
     if (error) {
@@ -31,24 +32,20 @@ const updateById = (request, response) => {
 
   profissionais.find({ id }, (error, profissional) => {
     if (profissional.length > 0) {
-      profissionais.updateMany(
-        { id },
-        { $set: request.body },
-        (error) => {
-          if (error) {
-            return response.status(500).send({
-              message: error.message,
-            });
-          }
-          return response.status(200).send({
-            message: "Registro alterado com sucesso"            
+      profissionais.updateMany({ id }, { $set: request.body }, (error) => {
+        if (error) {
+          return response.status(500).send({
+            message: error.message,
           });
         }
-      );
+        return response.status(200).send({
+          message: "Registro alterado com sucesso",
+        });
+      });
     } else {
       return response
         .status(200)
-        .send({ message: "Não registros com esse id para serem atualizados" });
+        .send({ message: "Não há registro com esse id para ser atualizado" });
     }
   });
 };
@@ -60,24 +57,53 @@ const deleteById = (request, response) => {
       profissionais.deleteMany({ id }, (error) => {
         if (error) {
           return response.status(500).send({
-            message: error.message
+            message: error.message,
           });
         }
         return response.status(200).send({
-          message: "Profissional removido com sucesso!"        
+          message: "Profissional removido com sucesso!",
         });
       });
     } else {
       return response.status(200).send({
-        message: "Não há profissionais com este para ser excluído"
+        message: "Não há profissional com este id para ser excluído",
       });
     }
   });
 };
 
+const selectById = (request, responde) => {
+
+};
+
+const selectByName = (request, response) => {};
+
+const selectByAreaSubarea = (request, response) => {
+  profissionais.find({
+    nome: true,
+    area: true,
+    subarea: true,
+    _id: false
+  }, ((error, profissionais) => {
+    return response.status(200).send(profissionais)
+  })
+}
+}
+
+const selectByAddress = (request, response) => {};
+
+const replaceOne = (request, response) => {};
+
+
+
 module.exports = {
-  getAll,
+  selectAll,
   create,
   updateById,
   deleteById,
+  selectById,
+  selectByName,
+  selectByAreaSubarea,
+  selectByAddress,
+  replaceOne
 };
