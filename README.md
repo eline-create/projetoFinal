@@ -4,9 +4,9 @@
 
 Projeto final do curso de Desenvolvimento Web em Back-End realizado pelo bootcamp da Reprograma em parceria com o M.I.N.As / Porto Digital.
 
-![Logotipo com o nome do projeto](./images/logo3.png)
+![Logotipo com o nome do projeto](./images/logo.gif)
 
-Seja Bem Vindo ao Banco de Dados que reúne profissionais negrxs de diversas áreas em um só lugar!
+Seja Bem Vindo ao Banco de Dados que reúne profissionais negros de diversas áreas em um só lugar!
 
 <h2>Documentação</h2>
 
@@ -18,15 +18,19 @@ Para este projeto rodar, você precisará:
 ***Comandos de Inicialização***
 
 
-<h2>Um pouco de história e contextualização</h2>
+<h2>Contextualizando</h2>
 
-Sabe-se que história dos negros no Brasil é permeada por escravização de povos vindos do continente africano, estupro por meio de reprodução forçada e muito trabalho pesado não remunerado. Com a abolição da escravatura, os negros foram jogados nas ruas sem trabalho. Sem condições para viver, ocuparam as áreas marginalizadas das cidades. Durante muitos anos, esta parcela da população não teve condições para se profissionalizar e ocupar vagas de emprego melhores. Além do fato, de terem sido inferiorizados e discriminados.
+Sabe-se que história dos negros no Brasil é permeada pela escravização de povos vindos do continente africano, estupro por meio de reprodução forçada e muito trabalho pesado não remunerado. Com a abolição da escravatura, os negros foram jogados nas ruas sem trabalho. Sem condições para viver, ocuparam as áreas marginalizadas das cidades. Além do fato, de terem sido inferiorizados e discriminados, durante muitos anos, esta parcela da população não teve condições para se profissionalizar e ocupar vagas de emprego melhores. 
 
 Apesar de a mudança ser lenta, mediante tantos anos de história, mais negros estão conseguindo se qualificar. No entanto, ainda é difícil encontrar tais profissionais sem que se faça uma busca minuciosa. Neste sentido, objetiva-se com este banco de dados reunir o máximo de profissionais negros, facilitando o acesso aos diversos públicos e permitindo ampliar a divulgação de tais profissionais e seus trabalhos. 
 
 <h2>Sobre a População Brasileira</h2>
 
 O IBGE pesquisa a cor ou raça da população brasileira com base na autodeclaração. Ou seja, as pessoas são perguntadas sobre sua cor de acordo com as seguintes opções: branca, preta, parda, indígena ou amarela. De acordo com dados da Pesquisa Nacional por Amostra de Domicílios (PNAD) 2019, 42,7% dos brasileiros se declararam como brancos, 46,8% como pardos, 9,4% como pretos e 1,1% como amarelos ou indígenas.
+
+De acordo com dados da Pesquisa Nacional por Amostra de Domicílios (PNAD) 2019, 42,7% dos brasileiros se declararam como brancos, 46,8% como pardos, 9,4% como pretos e 1,1% como amarelos ou indígenas.
+
+<center><img src="./images/ibge.png"></center>
  
 <h2>Conhecendo as rotas da API</h2>
 
@@ -40,35 +44,36 @@ Caso queira saber como fechar uma porta em uso ou descobrir se ela está sendo u
 ## CRUD Profissionais ##
 ---
 
-| Verbo            | Método        | Recurso                | Descrição                                      |
-| ------------     |------------   | ---------------------- | ------------------------------------------     |
-| 1.POST           | createNew     | `/profissionais`       | Cadastrar novo  profissional                   |
-| 2.GET            | selectAll     | `/profissionais`       | Retornar todos os profissionais                |
-| 3.PUT            | update        | `/profissionais/:id`   | Substituir todas as informações de um registro |
-| 4.DELETE         | delete        | `/profissionais/:id`   | Deletar um cadastro específico                 |
+| Verbo    | Método        | Recurso                | Descrição                                      |
+| -------- |------------   | ---------------------- | ------------------------------------------     |
+| 1.POST   | createNew     | `/profissionais`       | Cadastrar novo  profissional                   |
+| 2.GET    | selectAll     | `/profissionais`       | Retornar todos os profissionais                |
+| 3.PUT    | updateById    | `/profissionais/:id`   | Substituir todas as informações de um registro |
+| 4.DELETE | deleteById    | `/profissionais/:id`   | Deletar um cadastro específico                 |
 
 ---
 
 ---
 
-| Verbo              | Método             | Recurso                | Descrição                                              |
-| ------------       |------------        | ---------------------- | -----------------------------------------------------  |
-| 1.GET              | selectById         | `/profissionais`       | Retornar um profissional por id                        |
-| 2.GET              | selectByName       | `/profissionais`       | Retornar um profissional por nome                      |
-| 3.GET              | selectByAreaSubarea| `/profissionais/:id`   | Retornar os profissionais por área e subárea de atuação|
-| 4.GET              | selectByAddress    | `/profissionais/:id`   | Retornar um profissional por local de atuação          |
-
+| Verbo  | Método             | Recurso                         | Descrição                                              |
+| ------ |------------------- | ------------------------------- | -----------------------------------------------------  |
+| 1.GET  | selectById         | `/profissionais`                | Retornar um profissional por id                        |
+| 2.GET  | selectByName       | `/profissionais`                | Retornar um profissional por nome                      |
+| 3.GET  | selectBySubarea    | `/profissionais/:id`            | Retornar os profissionais por área e subárea de atuação|
+| 4.GET  | selectByAddress    | `/profissionais/:id`            | Retornar um profissional por local de atuação          |
+| 5.GET  | filterAdm          | `/profissionais/admId/:admId`   | Retornar um profissional por local de atuação          |
 ---
 
 **Rotas/Métodos Principais** 
 ## CRUD Administradoras ##
 
-| Verbo              | Método        | Recurso                | Descrição                               |
-| ------------       |------------   | ---------------------- | -------------------------------------   |
-| 1.GET              | createNew     | `/administradoras`     | Retornar todos os profissionais         |
-| 2.POST             | selectAll     | `/administradoras`     | Cadastrar novo profissional             |
-| 3.PUT              | update        | `/administradoras/:id` | Atualizar um cadastro específico        |
-| 4.DELETE           | delete        | `/profissionais/:id`   | Deletar um cadastro específico          |
+| Verbo    | Método        | Recurso                  | Descrição                               |
+| -------- |------------   | ----------------------   | -------------------------------------   |
+| 1.GET    | createNew     | `/administradoras`       | Retornar todos os profissionais         |
+| 2.POST   | selectAll     | `/administradoras`       | Cadastrar novo profissional             |
+| 3.POST   | login         | `/administradoras/login `| Acesso ao banco pelas administradoras   |
+| 4.PUT    | update        | `/administradoras/:id`   | Atualizar um cadastro específico        |
+| 5.DELETE | delete        | `/administradoras/:id`   | Deletar um cadastro específico          |
 
 
 <h2></h2>

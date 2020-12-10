@@ -25,6 +25,7 @@ const createAdministradora = (request, response) => {
       return response.status(500).send({ message: err.message });
     } else {
       const administradora = new administradoras(request.body);
+      administradora.id = count + 1;
       administradora.save((error) => {
         if (error) {
           return response.status(500).send({ message: error.message });
