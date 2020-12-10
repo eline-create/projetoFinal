@@ -3,19 +3,19 @@ const SECRET = process.env.SECRET;
 const jwt = require("jsonwebtoken");
 const { response, request } = require("../app");
 
-const authorization = (request, response) => {
-  const authHeader = request.get("authorization");
-  if (!authHeader) {
-    return response.status(401).send("Você está autorizado?");
-  }
-  const token = authHeader.split(" ")[1];
+// const authorization = (request, response) => {
+//   const authHeader = request.get("authorization");
+//   if (!authHeader) {
+//     return response.status(401).send("Você está autorizado?");
+//   }
+//   const token = authHeader.split(" ")[1];
 
-  jwt.verify(token, SECRET, function (error) {
-    if (error) {
-      return response.status(403).send("Você necessita de um token de acesso!");
-    }
-  });
-};
+//   jwt.verify(token, SECRET, function (error) {
+//     if (error) {
+//       return response.status(403).send("Você necessita de um token de acesso!");
+//     }
+//   });
+// };
 
 const selectAll = (request, response) => {
   profissionais.find((error, profissional) => {
