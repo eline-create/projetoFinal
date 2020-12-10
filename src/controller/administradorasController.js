@@ -3,8 +3,22 @@ const jwt = require("jsonwebtoken");
 const SECRET = process.env.SECRET;
 const bcrypt = require("bcrypt");
 
+const authorization = (request, response) => {
+  const authHeader = request.get("authorization");
+  if (!authHeader) {
+    return response.status(401).send("Você está autorizado?");
+  }
+  const token = authHeader.split(" ")[1];
+
+  jwt.verify(token, SECRET, function (error) {
+    if (error) {
+      return response.status(403).send("Você necessita de um token de acesso!");
+    }
+  });
+};
+
 const createAdministradora = (request, response) => {
-  console.log(request.body);
+  authorization();
   const senhaComHash = bcrypt.hashSync(request.body.senha, 10);
   request.body.senha = senhaComHash;
 
@@ -19,17 +33,7 @@ const createAdministradora = (request, response) => {
 };
 
 const getAllAdministradoras = (request, response) => {
-  // const authHeader = request.get("authorization");
-  // if (!authHeader) {
-  //   return response.status(401).send("Você está autorizado?");
-  // }
-  // const token = authHeader.split(" ")[1];
-
-  // jwt.verify(token, SECRET, function (error) {
-  //   if (error) {
-  //     return response.status(403).send("Você necessita de um token de acesso!");
-  //   }
-  // });
+  authorization();
   administradoras.find((error, administradoras) => {
     if (error) {
       return response.status(500).send({ message: error.message });
@@ -63,6 +67,7 @@ const loginAdministradora = (request, response) => {
 };
 
 const updateAdministradora = (request, response) => {
+  authorization();
   const id = request.params.id;
   administradoras.find({ id }, (error, administradora) => {
     if (administradora.length > 0) {
@@ -83,6 +88,7 @@ const updateAdministradora = (request, response) => {
 };
 
 const deleteAdministradora = (request, response) => {
+  authorization();
   const id = request.params.id;
   administradoras.find({ id }, (error, administradora) => {
     if (administradora.length > 0) {

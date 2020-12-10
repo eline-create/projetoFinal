@@ -3,6 +3,20 @@ const SECRET = process.env.SECRET;
 const jwt = require("jsonwebtoken");
 const { response, request } = require("../app");
 
+const authorization = (request, response) => {
+  const authHeader = request.get("authorization");
+  if (!authHeader) {
+    return response.status(401).send("Você está autorizado?");
+  }
+  const token = authHeader.split(" ")[1];
+
+  jwt.verify(token, SECRET, function (error) {
+    if (error) {
+      return response.status(403).send("Você necessita de um token de acesso!");
+    }
+  });
+};
+
 const selectAll = (request, response) => {
   profissionais.find((error, profissional) => {
     if (error) {
@@ -14,6 +28,7 @@ const selectAll = (request, response) => {
 };
 
 const create = (request, response) => {
+  authorization();
   profissionais.countDocuments((err, count) => {
     if (err) {
       return response.status(500).send({ message: err.message });
@@ -34,6 +49,7 @@ const create = (request, response) => {
 };
 
 const updateById = (request, response) => {
+  authorization();
   const id = request.params.id;
 
   profissionais.find({ id }, (error, profissional) => {
@@ -57,6 +73,7 @@ const updateById = (request, response) => {
 };
 
 const deleteById = (request, response) => {
+  authorization();
   const id = request.params.id;
   profissionais.find({ id }, (error, profissional) => {
     if (profissional.length > 0) {
@@ -164,7 +181,7 @@ const selectByAddress = (request, response) => {
 };
 
 const filterAdm = (request, response) => {
-  
+
 }
 
 module.exports = {
