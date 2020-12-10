@@ -181,6 +181,7 @@ const selectByAddress = (request, response) => {
 };
 
 const filterAdm = (request, response) => {
+  authorization(request, response);
   const admId = request.params.admId;
   profissionais.find({ admId: admId }, (error, profissional) => {
     if (profissional.length > 0) {
