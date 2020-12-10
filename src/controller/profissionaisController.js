@@ -3,19 +3,19 @@ const SECRET = process.env.SECRET;
 const jwt = require("jsonwebtoken");
 const { response, request } = require("../app");
 
-// const authorization = (request, response) => {
-//   const authHeader = request.get("authorization");
-//   if (!authHeader) {
-//     return response.status(401).send("Você está autorizado?");
-//   }
-//   const token = authHeader.split(" ")[1];
+const authorization = (request, response) => {
+  const authHeader = request.get("authorization");
+  if (!authHeader) {
+    return response.status(401).send("Você está autorizado?");
+  }
+  const token = authHeader.split(" ")[1];
 
-//   jwt.verify(token, SECRET, function (error) {
-//     if (error) {
-//       return response.status(403).send("Você necessita de um token de acesso!");
-//     }
-//   });
-// };
+  jwt.verify(token, SECRET, function (error) {
+    if (error) {
+      return response.status(403).send("Você necessita de um token de acesso!");
+    }
+  });
+};
 
 const selectAll = (request, response) => {
   profissionais.find((error, profissional) => {
@@ -28,7 +28,7 @@ const selectAll = (request, response) => {
 };
 
 const create = (request, response) => {
-  //authorization();
+  authorization(request, response);
   profissionais.countDocuments((err, count) => {
     if (err) {
       return response.status(500).send({ message: err.message });
@@ -49,7 +49,7 @@ const create = (request, response) => {
 };
 
 const updateById = (request, response) => {
-  //authorization();
+  authorization(request, response);
   const id = request.params.id;
 
   profissionais.find({ id }, (error, profissional) => {
@@ -73,7 +73,7 @@ const updateById = (request, response) => {
 };
 
 const deleteById = (request, response) => {
-  //authorization();
+  authorization(request, response);
   const id = request.params.id;
   profissionais.find({ id }, (error, profissional) => {
     if (profissional.length > 0) {
@@ -181,7 +181,24 @@ const selectByAddress = (request, response) => {
 };
 
 const filterAdm = (request, response) => {
-
+  const admId = request.params.admId;
+  profissionais.find({ admId: admId }, (error, profissional) => {
+    if (profissional.length > 0) {
+      profissionais.findOne({ admId }, (error) => {
+        if (error) {
+          return response.status(500).send({
+            message: error.message,
+          });
+        }
+        return response.status(200).send(profissional);
+      });
+    } else {
+      return response.status(200).send({
+        message:
+          "Estes são os profissionais cadastrados pela Administradora pesquisada",
+      });
+    }
+  });
 }
 
 module.exports = {
