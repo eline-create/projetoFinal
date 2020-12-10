@@ -33,7 +33,17 @@ const createAdministradora = (request, response) => {
 };
 
 const getAllAdministradoras = (request, response) => {
-  authorization();
+  const authHeader = request.get("authorization");
+  if (!authHeader) {
+    return response.status(401).send("Você está autorizado?");
+  }
+  const token = authHeader.split(" ")[1];
+
+  jwt.verify(token, SECRET, function (error) {
+    if (error) {
+      return response.status(403).send("Você necessita de um token de acesso!");
+    }
+  });
   administradoras.find((error, administradoras) => {
     if (error) {
       return response.status(500).send({ message: error.message });
