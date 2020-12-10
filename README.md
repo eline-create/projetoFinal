@@ -6,7 +6,7 @@ Projeto final do curso de Desenvolvimento Web em Back-End realizado pelo bootcam
 
 ![Logotipo com o nome do projeto](./images/logo3.png)
 
-Banco de Dados que reúne profissionais negrxs de diversas áreas em um só lugar!
+Seja Bem Vindo ao Banco de Dados que reúne profissionais negrxs de diversas áreas em um só lugar!
 
 <h2>Documentação</h2>
 
@@ -49,8 +49,6 @@ Caso queira saber como fechar uma porta em uso ou descobrir se ela está sendo u
 
 ---
 
-***Rotas/Métodos secundários***
-
 ---
 
 | Verbo              | Método             | Recurso                | Descrição                                              |
@@ -59,7 +57,7 @@ Caso queira saber como fechar uma porta em uso ou descobrir se ela está sendo u
 | 2.GET              | selectByName       | `/profissionais`       | Retornar um profissional por nome                      |
 | 3.GET              | selectByAreaSubarea| `/profissionais/:id`   | Retornar os profissionais por área e subárea de atuação|
 | 4.GET              | selectByAddress    | `/profissionais/:id`   | Retornar um profissional por local de atuação          |
-| 5.PATCH            | replaceOne         | `/profissionais/:id`   | Atualizar um campo específico do cadastro              |
+
 ---
 
 **Rotas/Métodos Principais** 

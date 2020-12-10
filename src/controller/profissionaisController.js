@@ -142,8 +142,6 @@ const selectBySubarea = (request, response) => {
   );
 };
 
-//rota ok
-
 const selectByAddress = (request, response) => {
   const city = request.params.city;
   profissionais.find({ city: city }, (error, profissional) => {
@@ -165,6 +163,10 @@ const selectByAddress = (request, response) => {
   });
 };
 
+const filterAdm = (request, response) => {
+  
+}
+
 module.exports = {
   selectAll,
   create,
@@ -174,4 +176,5 @@ module.exports = {
   selectByName,
   selectBySubarea,
   selectByAddress,
+  filterAdm
 };

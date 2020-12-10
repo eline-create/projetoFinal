@@ -10,5 +10,6 @@ router.get("/:id", controller.selectById);
 router.get("/name/:name", controller.selectByName);
 router.get("/subarea/:subarea", controller.selectBySubarea);
 router.get("/city/:city", controller.selectByAddress);
+router.get("/admId/:admId", controller.filterAdm);
 
 module.exports = router;

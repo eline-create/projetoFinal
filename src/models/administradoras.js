@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const administradorasSchema = new mongoose.Schema(
   {
-    id: { type: Number, required: true },
+    Id: { type: Number, required: true },
     name: { type: String },
     email: { type: String },
     senha: { type: String },
