@@ -18,17 +18,6 @@ const bcrypt = require("bcrypt");
 // };
 
 const createAdministradora = (request, response) => {
-  const authHeader = request.get("authorization");
-  if (!authHeader) {
-    return response.status(401).send("Você está autorizado?");
-  }
-  const token = authHeader.split(" ")[1];
-
-  jwt.verify(token, SECRET, function (error) {
-    if (error) {
-      return response.status(403).send("Você necessita de um token de acesso!");
-    }
-  });
   const senhaComHash = bcrypt.hashSync(request.body.senha, 10);
   request.body.senha = senhaComHash;
 

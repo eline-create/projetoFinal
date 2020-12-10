@@ -28,7 +28,7 @@ const selectAll = (request, response) => {
 };
 
 const create = (request, response) => {
-  authorization();
+  //authorization();
   profissionais.countDocuments((err, count) => {
     if (err) {
       return response.status(500).send({ message: err.message });
@@ -49,7 +49,7 @@ const create = (request, response) => {
 };
 
 const updateById = (request, response) => {
-  authorization();
+  //authorization();
   const id = request.params.id;
 
   profissionais.find({ id }, (error, profissional) => {
@@ -73,7 +73,7 @@ const updateById = (request, response) => {
 };
 
 const deleteById = (request, response) => {
-  authorization();
+  //authorization();
   const id = request.params.id;
   profissionais.find({ id }, (error, profissional) => {
     if (profissional.length > 0) {
