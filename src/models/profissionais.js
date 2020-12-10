@@ -8,7 +8,7 @@ const profissionaisSchema = new mongoose.Schema(
     area: { type: String },
     subarea: { type: String },
     service: { type: String },
-    address: { type: String },
+    city: { type: String },
     contacts: { type: Array },
     adminId: { type: Number, required:true }
   },

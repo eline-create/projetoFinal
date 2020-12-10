@@ -7,10 +7,8 @@ router.get("/", controller.selectAll);
 router.put("/:id", controller.updateById);
 router.delete("/:id", controller.deleteById);
 router.get("/:id", controller.selectById);
-router.get("/:name", controller.selectByName);
-router.get("/:area", controller.selectBySubarea);
-router.get("/:address", controller.selectByAddress);
-router.patch("/:id", controller.replaceOne);
+router.get("/name/:name", controller.selectByName);
+router.get("/subarea/:subarea", controller.selectBySubarea);
+router.get("/city/:city", controller.selectByAddress);
 
 module.exports = router;
-

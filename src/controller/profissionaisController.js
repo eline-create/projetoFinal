@@ -14,15 +14,21 @@ const selectAll = (request, response) => {
 };
 
 const create = (request, response) => {
-  const profissional = new profissionais(request.body);
-  console.log(request.body);
-  profissional.save((error) => {
-    if (error) {
-      return response.status(500).send({
-        message: error.message,
-      });
+  profissionais.countDocuments((err, count) => {
+    if (err) {
+      return response.status(500).send({ message: err.message });
     } else {
-      return response.status(201).send(profissional.toJSON());
+      const profissional = new profissionais(request.body);
+      profissional.id = count + 1;
+      profissional.save((error) => {
+        if (error) {
+          return response.status(500).send({
+            message: error.message,
+          });
+        } else {
+          return response.status(201).send(profissional.toJSON());
+        }
+      });
     }
   });
 };
@@ -61,7 +67,7 @@ const deleteById = (request, response) => {
           });
         }
         return response.status(200).send({
-          message: "Profissional removido com sucesso!"
+          message: "Profissional removido com sucesso!",
         });
       });
     } else {
@@ -72,35 +78,54 @@ const deleteById = (request, response) => {
   });
 };
 
-//Subrotas
-
 const selectById = (request, response) => {
-    const id = request.params.id;
-    profissionais.find({ id }, (error, profissional) => {
-      if (profissionais.length > 0) {
-        profissionais.findOne({ id }, (error) => {
-          if (error) {
-            return response.status(500).send({
-              message: error.message,
-            });
-          }
-          return response.status(200).send(profissional);
-        });
-      } else {
-        return response.status(200).send({
-          message: "Não há profissional cadastrado com este id",
-        });
-      }
-    });
-  };
-
-  //TESTAR A PARTIR DAQUI
+  const id = request.params.id;
+  profissionais.find({ id }, (error, profissional) => {
+    if (profissionais.length > 0) {
+      profissionais.findOne({ id }, (error) => {
+        if (error) {
+          return response.status(500).send({
+            message: error.message,
+          });
+        }
+        return response.status(200).send(profissional);
+      });
+    } else {
+      return response.status(200).send({
+        message: "Não há profissional cadastrado com este id",
+      });
+    }
+  });
+};
 
 const selectByName = (request, response) => {
   const name = request.params.name;
-    profissionais.find({ name }, (error, profissional) => {
+  profissionais.find({ name }, (error, profissional) => {
+    if (profissional.length > 0) {
+      profissionais.findOne({ name }, (error) => {
+        if (error) {
+          return response.status(500).send({
+            message: error.message,
+          });
+        }
+        return response.status(200).send(profissional);
+      });
+    } else {
+      return response.status(200).send({
+        message: "Não há profissional cadastrado com este nome",
+      });
+    }
+  });
+};
+
+const selectBySubarea = (request, response) => {
+  const subarea = request.params.subarea;
+  profissionais.find(
+    { subarea: subarea },
+    { name: 1, subarea: 1, city: 1, _id: 0 },
+    (error, profissional) => {
       if (profissional.length > 0) {
-        profissionais.findOne({ name }, {area:true, contacts: true, _id: false }, (error) => {
+        profissionais.findOne({ subarea }, (error) => {
           if (error) {
             return response.status(500).send({
               message: error.message,
@@ -110,62 +135,35 @@ const selectByName = (request, response) => {
         });
       } else {
         return response.status(200).send({
-          message: "Não há profissional cadastrado com este nome",
+          message: "Não há profissional cadastrado nesta subarea",
         });
       }
-    });
+    }
+  );
 };
 
-const selectBySubarea = (request, response) => {
-  // const profissionais = request.params.subarea
-  // profissionais.find({ subarea: true },
-  // {
-  //   nome: true,
-  //   area: true,
-  //   subarea: true,
-  //   _id: false
-  // }, ((error, profissional) => {
-  //   if(error) {
-  //     return response.status(500).send({
-  //       message: error.message,
-  //     });
-  //   } else {
-  //     return response.status(200).send({message: `${req.body} é o que você procura` })
-  //   }    
-  // })
-  };
-
+//rota ok
 
 const selectByAddress = (request, response) => {
-  
+  const city = request.params.city;
+  profissionais.find({ city: city }, (error, profissional) => {
+    if (profissional.length > 0) {
+      profissionais.findOne({ city }, (error) => {
+        if (error) {
+          return response.status(500).send({
+            message: error.message,
+          });
+        }
+        return response.status(200).send(profissional);
+      });
+    } else {
+      return response.status(200).send({
+        message:
+          "Não há profissional cadastrado atendendo na cidade pesquisada",
+      });
+    }
+  });
 };
-
-const replaceOne = (request, response) => {
-    // const id = request.params.id;
-    // try {
-    //   const profissionalAModificar = profissionais.find((profissional) => profissional.id === id);
-    //   const profissionalAtualizado = req.body;
-    //   const index = profissional.indexOf(profissionalAModificar);
-    //   profissional.splice(index, 1, profissionalAtualizado);
-    //   {
-    //     if (error) {
-    //       return response.status(424).send({
-    //         message: error.message
-    //       });
-    //     }
-    //     console.log("Registro Atualizado!")
-    //   }
-    //   return response.status(200).send(profissionais)
-  
-    //   }catch (err) {
-    //   return response.status(424).send({
-    //     message: err,
-    //   });
-    // }
-  };
-
-
-
 
 module.exports = {
   selectAll,
@@ -176,5 +174,4 @@ module.exports = {
   selectByName,
   selectBySubarea,
   selectByAddress,
-  replaceOne
 };
