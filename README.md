@@ -59,9 +59,10 @@ Raça é um termo que não possui o mesmo significado para todas as pessoas e su
 
 Para este projeto rodar, você precisará ter instalado em sua máquina:
 
-* Node.js (versão igual ou superior a v12.18.3)
-* MongoDB (Se quiser facilitar a visualização pode usar o Robo3T - )
-* Controle de versionamento - Git
+* Node.js(versão igual ou superior a v12.18.3);
+* MongoDB(Para facilitar a visualização dos dados no banco, pode usar o Robo3T);
+* Controle de versionamento(Git);
+* IDE-Ambiente de desenvolvimento integrado(Visual Studio Code)
 
 ##Comandos de Inicialização
 
@@ -74,13 +75,14 @@ Caso queria começar do início e apenas se guiar por aqui, lembre-se de usar o 
 
 ## Depedências
 
+Estas foram as depências utilizadas. Os procedimentos de instalação contam na documentação NPM de cada uma. Lembrando que a instalação só será necessária caso não queira iniciar um arquivo do zero. Para isso não esqueça do comando **npm init** antes de começar a instalas as mesmas.
+
 1. bcrypt
 2. dotenv-safe
 3. express
 4. jsonwebtoken
 5. mongoose 
 6. nodemon
-
 
 <h2>Rotas da API</h2>
 
