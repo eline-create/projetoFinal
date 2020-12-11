@@ -20,7 +20,7 @@ O que você encontra aqui:
       * [Dependências](#Dependências)
    * [Rotas da API](#Rotas-da-API)
    * [Testes](#testes)
-   * [Se liga nas dicas!](#Se-liga-nas-dicas!) 
+   * [Se liga nas dicas!](#Se-liga-nas-dicas-!) 
    * [Referências](#Referências)
 <!--te-->
 
@@ -61,7 +61,7 @@ Para este projeto inicializar, você precisará ter instalado em sua máquina:
 * Node.js(versão igual ou superior a v12.18.3);
 * MongoDB(Para facilitar a visualização dos dados no banco, pode usar o Robo3T);
 * Controle de versionamento(Git);
-* IDE-Ambiente de desenvolvimento integrado(Visual Studio Code)
+* IDE-Ambiente de desenvolvimento integrado(Visual Studio Code).
 
 <h3>Comandos de Inicialização</h3>
 
@@ -127,12 +127,12 @@ No intuito de garantir a segurança dos dados coletados e sua manipulação rest
 
 <h2>Testes</h2>
 
-Para testar a API em alguma ferramente de testes e desenvolvimento de APIs, você pode fazer download das rotas organizadas através deste [link](https://www.getpostman.com/collections/3933ec0a5006252b83dd) do Postaman. Não esqueça de configurar a porta/host que estará sendo usada no seu computador.
+Para testar a API em alguma ferramenta de testes e desenvolvimento de APIs, você pode fazer download das rotas organizadas através deste [link](https://www.getpostman.com/collections/3933ec0a5006252b83dd) do Postman. Não esqueça de configurar a porta/host que estará sendo usada no seu computador.
 
 O deploy do projeto foi feito no Heroku. Você pode encontrar através do link [Projeto Final](https://projetofinal-reprograma.herokuapp.com/) no Heroku.Esse link te levará ao index. 
 
 
-**##Se liga nas dicas!**
+<h2>Se liga nas dicas!</h2>
 
 1. Caso queira saber como fechar uma porta em uso ou descobrir se ela está sendo utilizada, é possível através deste [link](https://medium.com/@daniloassis.ti/como-finalizar-um-processo-em-aberto-no-windows-525652152902);
 2. Para gerar a chave privada, pode usar esse [site](https://travistidwell.com/jsencrypt/demo/);
