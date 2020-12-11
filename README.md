@@ -40,8 +40,7 @@ Importante saber: É possível que em outra máquina a porta esteja sendo utiliz
 Caso queira saber como fechar uma porta em uso ou descobrir se ela está sendo utilizada, é possível através deste link: https://medium.com/@daniloassis.ti/como-finalizar-um-processo-em-aberto-no-windows-525652152902
 
 
-**Rotas/Métodos Principais** 
-## CRUD Profissionais ##
+## Rotas Profissionais ##
 ---
 
 | Verbo    | Método        | Recurso                | Descrição                                      |
@@ -64,8 +63,7 @@ Caso queira saber como fechar uma porta em uso ou descobrir se ela está sendo u
 | 5.GET  | filterAdm          | `/profissionais/admId/:admId`   | Retornar um profissional por local de atuação          |
 ---
 
-**Rotas/Métodos Principais** 
-## CRUD Administradoras ##
+## Rotas Administradoras ##
 
 | Verbo    | Método        | Recurso                  | Descrição                               |
 | -------- |------------   | ----------------------   | -------------------------------------   |
@@ -82,10 +80,10 @@ Para gerar a chave privada, usar o site: https://travistidwell.com/jsencrypt/dem
 
 ### Referências:
 
-1. Sobre a População Brasileira. https://educa.ibge.gov.br/jovens/conheca-o-brasil/populacao/18319-cor-ou-raca.html
-2. Estudos sobre cor e raça. Disponível em: https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/14057-asi-ibge-divulga-resultados-de-estudo-sobre-cor-ou-raca
-3. Com identificar uma porta HTTP. Disponível em: https://medium.com/@daniloassis.ti/como-finalizar-um-processo-em-aberto-no-windows-525652152902.
-
+1. Sobre a População Brasileira. https://educa.ibge.gov.br/jovens/conheca-o-brasil/populacao/18319-cor-ou-raca.html Acesso em 28/11/2020.
+2. Estudos sobre cor e raça. Disponível em: https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/14057-asi-ibge-divulga-resultados-de-estudo-sobre-cor-ou-raca. Acesso em 28/11/2020.
+3. Com identificar uma porta HTTP. Disponível em: https://medium.com/@daniloassis.ti/como-finalizar-um-processo-em-aberto-no-windows-525652152902. Acesso em 28/11/2020.
+4. Sobre o uso da linguagem neutra. Disponível em: https://guiadoestudante.abril.com.br/atualidades/linguagem-neutra-bobagem-ou-luta-contra-a-discriminacao/. Acesso em 10/12/2020.
 
 
 

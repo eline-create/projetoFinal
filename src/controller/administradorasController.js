@@ -18,8 +18,8 @@ const authorization = (request, response) => {
 };
 
 const createAdministradora = (request, response) => {
-  const senhaComHash = bcrypt.hashSync(request.body.senha, 10);
-  request.body.senha = senhaComHash;
+  const passWithHash = bcrypt.hashSync(request.body.password, 10);
+  request.body.password = passWithHash;
   administradoras.countDocuments((err, count) => {
     if (err) {
       return response.status(500).send({ message: err.message });
@@ -73,6 +73,8 @@ const loginAdministradora = (request, response) => {
 const updateAdministradora = (request, response) => {
   authorization(request, response);
   const id = request.params.id;
+  const updateAdmin = request.body;
+  updateAdmin.password = bcrypt.hashSync(request.body.password, 10);
   administradoras.find({ id }, (error, administradora) => {
     if (administradora.length > 0) {
       administradoras.updateOne({ id }, { $set: request.body }, (error) => {
@@ -90,6 +92,17 @@ const updateAdministradora = (request, response) => {
     }
   });
 };
+
+
+
+
+
+
+
+
+
+
+
 
 const deleteAdministradora = (request, response) => {
   authorization(request, response);

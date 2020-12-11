@@ -200,7 +200,7 @@ const filterAdm = (request, response) => {
       });
     }
   });
-}
+};
 
 module.exports = {
   selectAll,
@@ -211,5 +211,5 @@ module.exports = {
   selectByName,
   selectBySubarea,
   selectByAddress,
-  filterAdm
+  filterAdm,
 };
