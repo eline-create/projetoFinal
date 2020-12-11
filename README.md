@@ -20,7 +20,7 @@ O que você encontra aqui:
       * [Dependências](#Dependências)
    * [Rotas da API](#Rotas-da-API)
    * [Testes](#testes)
-   * [Se liga nas dicas!](#Se-liga-nas-dicas-!) 
+   * [Se liga nas dicas](#Se-liga-nas-dicas) 
    * [Referências](#Referências)
 <!--te-->
 
@@ -132,7 +132,7 @@ Para testar a API em alguma ferramenta de testes e desenvolvimento de APIs, voc�
 O deploy do projeto foi feito no Heroku. Você pode encontrar através do link [Projeto Final](https://projetofinal-reprograma.herokuapp.com/) no Heroku.Esse link te levará ao index. 
 
 
-<h2>Se liga nas dicas!</h2>
+<h2>Se liga nas dicas</h2>
 
 1. Caso queira saber como fechar uma porta em uso ou descobrir se ela está sendo utilizada, é possível através deste [link](https://medium.com/@daniloassis.ti/como-finalizar-um-processo-em-aberto-no-windows-525652152902);
 2. Para gerar a chave privada, pode usar esse [site](https://travistidwell.com/jsencrypt/demo/);
