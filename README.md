@@ -1,10 +1,10 @@
-# Reprograma_Por Eline Pimentel
+# Reprograma_Projeto Livre Final_Negritude em Ação
 
 <center><Logo com o nome do projeto com fundo preto dentro de um quadrado que muda as cores da borda entre azul e brando><img src="./images/logo.gif"></center>
 
 <center><h1>Profissionais Negres de Diversas Áreas em um só Lugar!</h1></center>
 
- Banco de Dados que reúne profissionais negres de diversas campos de atuação e localidades.
+ Banco de Dados que reúne profissionais negres de diversos campos de atuação e localidades.
 
  Status: **Banco de Dados em alimentação contínua.** 
 
@@ -14,7 +14,7 @@ O que você encontra aqui:
    * [Apresentação](#Apresentação)
    * [Contextualizando](#Contextualizando)
    * [Sobre a População Brasileira](#Sobre-a-População-Brasileira)
-   * [Documentação](#Docuemntação)
+   * [Documentação](#Documentação)
    * [Tecnologias](#Tecnologias)
       * [Comandos de Inicialização](#Comandos-inicialização) 
       * [Dependências](#Dependências)
@@ -51,13 +51,12 @@ Raça é um termo que não possui o mesmo significado para todas as pessoas e su
 1. [NodeJs](https://nodejs.org/en/docs/)
 2. [NPM](https://docs.npmjs.com/)
 3. [Git](https://git-scm.com/doc)
-4. [Git - comandos utéis](https://gist.github.com/leocomelli/2545add34e4fec21ec16)
-5. [MongoDB](https://docs.mongodb.com/)
-6. [Robo 3T](https://robomongo.org/download)
+4. [MongoDB](https://docs.mongodb.com/)
+5. [Robo 3T](https://robomongo.org/download)
 
 <h2>Tecnologias utilizadas</h2>   
 
-Para este projeto rodar, você precisará ter instalado em sua máquina:
+Para este projeto inicializar, você precisará ter instalado em sua máquina:
 
 * Node.js(versão igual ou superior a v12.18.3);
 * MongoDB(Para facilitar a visualização dos dados no banco, pode usar o Robo3T);
@@ -66,7 +65,7 @@ Para este projeto rodar, você precisará ter instalado em sua máquina:
 
 ##Comandos de Inicialização
 
-Após ter feito o fork e clone deste repositório, para que o pacote node-modules fique ativo e você consiga utilizar todas as depências instaladas, você deve escrever no seu terminal, o comando:
+Após ter feito o fork e clone deste [repositório](https://github.com/eline-create/projetoFinal.git) em sua máquina para que o pacote node-modules fique ativo e você consiga utilizar todas as depências instaladas, você deve escrever no seu terminal, o comando:
 
 ```
 npm install
@@ -128,14 +127,18 @@ No intuito de garantir a segurança dos dados coletados e sua manipulação rest
 
 <h2>Testes</h2>
 
-Para testar a API em alguma ferramente de testes e desenvolvimento de APIs, você pode fazer download das rotas organizadas através deste [link](Link do Postamn e Heroku). Não esqueça de configurar a porta/host que estará sendo usada no seu computador.
+Para testar a API em alguma ferramente de testes e desenvolvimento de APIs, você pode fazer download das rotas organizadas através deste [link](https://www.getpostman.com/collections/3933ec0a5006252b83dd) do Postaman. Não esqueça de configurar a porta/host que estará sendo usada no seu computador.
+
+O deploy do projeto foi feito no Heroku. Você pode encontrar através do link [Projeto Final](https://projetofinal-reprograma.herokuapp.com/) no Heroku.Esse link te levará ao index. 
 
 
 **##Se liga nas dicas!**
 
 1. Caso queira saber como fechar uma porta em uso ou descobrir se ela está sendo utilizada, é possível através deste [link](https://medium.com/@daniloassis.ti/como-finalizar-um-processo-em-aberto-no-windows-525652152902);
 2. Para gerar a chave privada, pode usar esse [site](https://travistidwell.com/jsencrypt/demo/);
-3. Para fazer um bom readme com o [Rocketseat](https://blog.rocketseat.com.br/como-fazer-um-bom-readme/#Sobre)
+3. Para fazer um bom readme com o [Rocketseat](https://blog.rocketseat.com.br/como-fazer-um-bom-readme/#Sobre);
+4. Comandos utéis do Git [Git - comandos utéis](https://gist.github.com/leocomelli/2545add34e4fec21ec16)
+
 
 
 ### Referências:
