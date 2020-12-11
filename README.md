@@ -6,7 +6,7 @@ Projeto final do curso de Desenvolvimento Web em Back-End realizado pelo bootcam
 
 ![Logotipo com o nome do projeto](./images/logo.gif)
 
-Seja Bem Vindo ao Banco de Dados que reúne profissionais negros de diversas áreas em um só lugar!
+Seja Bem Vindo ao Banco de Dados que reúne profissionais negres de diversas áreas em um só lugar!
 
 <h2>Documentação</h2>
 
