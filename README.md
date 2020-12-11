@@ -16,11 +16,11 @@ O que você encontra aqui:
    * [Sobre a População Brasileira](#Sobre-a-População-Brasileira)
    * [Documentação](#Documentação)
    * [Tecnologias Utilizadas](#Tecnologias-Utilizadas)
-      * [Comandos de Inicialização](#Comandos-inicialização) 
+      * [Comandos de Inicialização](#Comandos-de-inicialização) 
       * [Dependências](#Dependências)
    * [Rotas da API](#Rotas-da-API)
    * [Testes](#testes)
-   * [Se liga nas dicas!](#Dicas) 
+   * [Se liga nas dicas!](#Se-liga-nas-dicas!) 
    * [Referências](#Referências)
 <!--te-->
 
