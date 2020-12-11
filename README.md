@@ -20,7 +20,7 @@ O que você encontra aqui:
       * [Dependências](#Dependências)
    * [Rotas da API](#Rotas-da-API)
    * [Testes](#testes)
-   * [Se liga nas dicas](#Se-liga-nas-dicas) 
+   * [Se liga nas dicas](#Se-liga-nas-dicas)
    * [Referências](#Referências)
 <!--te-->
 
@@ -51,17 +51,18 @@ Raça é um termo que não possui o mesmo significado para todas as pessoas e su
 1. [NodeJs](https://nodejs.org/en/docs/)
 2. [NPM](https://docs.npmjs.com/)
 3. [Git](https://git-scm.com/doc)
-4. [MongoDB](https://docs.mongodb.com/)
-5. [Robo 3T](https://robomongo.org/download)
+4. [Bash](https://www.atlassian.com/git/tutorials/git-bash)
+5. [MongoDB](https://docs.mongodb.com/)
+6. [Robo 3T](https://robomongo.org/download)
 
 <h2>Tecnologias utilizadas</h2>   
 
 Para este projeto inicializar, você precisará ter instalado em sua máquina:
 
-* Node.js(versão igual ou superior a v12.18.3);
-* MongoDB(Para facilitar a visualização dos dados no banco, pode usar o Robo3T);
-* Controle de versionamento(Git);
-* IDE-Ambiente de desenvolvimento integrado(Visual Studio Code).
+1. Node.js(versão igual ou superior a v12.18.3);
+2. MongoDB(Para facilitar a visualização dos dados no banco, pode usar o Robo3T);
+3. Controle de versionamento(Git);
+4. IDE-Ambiente de desenvolvimento integrado(Visual Studio Code).
 
 <h3>Comandos de Inicialização</h3>
 
@@ -70,6 +71,13 @@ Após ter feito o fork e clone deste [repositório](https://github.com/eline-cre
 ```
 npm install
 ```
+Para executar a aplicação pelo terminal, use o comando:
+
+```
+npm star
+```
+O servidor iniciará na porta:5002
+
 Caso queria começar do início e apenas se guiar por aqui, lembre-se de usar o npm init, antes de instalar as depêndencias a serem utilizadas.
 
 <h3>Dependências</h3>
@@ -140,7 +148,6 @@ O deploy do projeto foi feito no Heroku. Você pode encontrar através do link [
 4. Comandos utéis do Git [Git - comandos utéis](https://gist.github.com/leocomelli/2545add34e4fec21ec16)
 
 
-
 ### Referências:
 
 1. Como identificar uma porta HTTP. Disponível em: https://medium.com/@daniloassis.ti/como-finalizar-um-processo-em-aberto-no-windows-525652152902. Acesso em 28/11/2020.
@@ -151,3 +158,15 @@ O deploy do projeto foi feito no Heroku. Você pode encontrar através do link [
 6. Sobre heteroidentificação. Editora Lex Magister. Disponível em: http://www.lex.com.br/legis_27634767_PORTARIA_NORMATIVA_N_4_DE_6_DE_ABRIL_DE_2018.aspx. Acesso em 11/12/2020.
  
 
+### Autora
+---
+
+<a href="https://github.com/eline-create">
+ <img style="border-radius: 50%;" src="https://avatars0.githubusercontent.com/u/68877353?s=460&u=b3872c3c1f3f726e4a3195e4e46054019e90c962&v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Eline Pimentel</b></sub></a> 
+
+
+Feito com ❤️ por Eline Pimentel 
+
+[![Linkedin Badge](https://img.shields.io/badge/-ElinePimentel-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/eline-silva-de-paula-pimentel/)](https://www.linkedin.com/in/eline-silva-de-paula-pimentel/) 
