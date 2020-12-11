@@ -15,12 +15,12 @@ O que você encontra aqui:
    * [Contextualizando](#Contextualizando)
    * [Sobre a População Brasileira](#Sobre-a-População-Brasileira)
    * [Documentação](#Documentação)
-   * [Tecnologias](#Tecnologias)
+   * [Tecnologias Utilizadas](#Tecnologias-Utilizadas)
       * [Comandos de Inicialização](#Comandos-inicialização) 
       * [Dependências](#Dependências)
    * [Rotas da API](#Rotas-da-API)
    * [Testes](#testes)
-   * [Se liga nas dicas!](#Dicas)
+   * [Se liga nas dicas!](#Dicas) 
    * [Referências](#Referências)
 <!--te-->
 
@@ -63,7 +63,7 @@ Para este projeto inicializar, você precisará ter instalado em sua máquina:
 * Controle de versionamento(Git);
 * IDE-Ambiente de desenvolvimento integrado(Visual Studio Code)
 
-##Comandos de Inicialização
+<h3>Comandos de Inicialização</h3>
 
 Após ter feito o fork e clone deste [repositório](https://github.com/eline-create/projetoFinal.git) em sua máquina para que o pacote node-modules fique ativo e você consiga utilizar todas as depências instaladas, você deve escrever no seu terminal, o comando:
 
@@ -72,7 +72,7 @@ npm install
 ```
 Caso queria começar do início e apenas se guiar por aqui, lembre-se de usar o npm init, antes de instalar as depêndencias a serem utilizadas.
 
-## Depedências
+<h3>Dependências</h3>
 
 Estas foram as depências utilizadas. Os procedimentos de instalação contam na documentação NPM de cada uma. Lembrando que a instalação só será necessária caso não queira iniciar um arquivo do zero. Para isso não esqueça do comando **npm init** antes de começar a instalas as mesmas.
 
