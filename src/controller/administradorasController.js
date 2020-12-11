@@ -73,9 +73,7 @@ const loginAdministradora = (request, response) => {
 const updateAdministradora = (request, response) => {
   authorization(request, response);
   const id = request.params.id;
-  const updateAdmin = request.body;
-  updateAdmin.password = bcrypt.hashSync(request.body.password, 10);
-  administradoras.find({ id }, (error, administradora) => {
+    administradoras.find({ id }, (error, administradora) => {
     if (administradora.length > 0) {
       administradoras.updateOne({ id }, { $set: request.body }, (error) => {
         if (error) {
@@ -92,17 +90,6 @@ const updateAdministradora = (request, response) => {
     }
   });
 };
-
-
-
-
-
-
-
-
-
-
-
 
 const deleteAdministradora = (request, response) => {
   authorization(request, response);
