@@ -177,3 +177,5 @@ Assim que o link for acessado o primeiro endpoint que é um ("/")retornará o in
 Feito com ❤️  
 
 [![Linkedin Badge](https://img.shields.io/badge/-Eline-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/eline-silva-de-paula-pimentel/)](https://www.linkedin.com/in/eline-silva-de-paula-pimentel/) 
+
+[![License Badge](https://img.shields.io/github/license/eline-create/projetoFinal?style=plastic)](License.md)
