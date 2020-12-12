@@ -18,8 +18,8 @@ const authorization = (request, response) => {
 };
 
 const createAdministradora = (request, response) => {
-  const passWithHash = bcrypt.hashSync(request.body.password, 10);
-  request.body.password = passWithHash;
+  const passwordHash = bcrypt.hashSync(request.body.password, 10);
+  request.body.password = passwordHash;
   administradoras.countDocuments((err, count) => {
     if (err) {
       return response.status(500).send({ message: err.message });
@@ -30,11 +30,11 @@ const createAdministradora = (request, response) => {
         if (error) {
           return response.status(500).send({ message: error.message });
         }
-        return response.status(201).send(administradora.toJSON());
+        return response.status(201).send({ message: "Administradora criado com sucesso!" });        
       });
     }
   });
-};
+};      
 
 const getAllAdministradoras = (request, response) => {
   authorization(request, response);
@@ -50,19 +50,22 @@ const loginAdministradora = (request, response) => {
   administradoras.findOne(
     { email: request.body.email },
     (error, administradora) => {
+      if (error) {
+        return response.status(500).send({ message: error.message});
+      }
       if (!administradora) {
         return response
           .status(404)
           .send(
-            `E-mail da Administradora ${request.body.email} não encontrado`
-          );
+            `E-mail de administradora ${request.body.email} não encontrado`
+          ); 
       }
-      const senhaValida = bcrypt.compareSync(
-        request.body.senha,
-        administradora.senha
+      const validPassword = bcrypt.compareSync(
+        request.body.password,
+        administradora.password
       );
-      if (!senhaValida) {
-        return response.status(403).send("Senha Incorreta");
+      if (!validPassword) {
+        return response.status(403).send("Senha inválida");
       }
       const token = jwt.sign({ email: request.body.email }, SECRET);
       return response.status(200).send(token);
@@ -81,12 +84,12 @@ const updateAdministradora = (request, response) => {
         }
         return response
           .status(200)
-          .send({ message: "Registro alterado com sucesso" });
+          .send({ message: "Regitro alterado com sucesso!" });
       });
     } else {
       return response
         .status(200)
-        .send({ message: "Esse id não possui registro para ser atualizado" });
+        .send({ message: "O id solicitado não está registrado!" });
     }
   });
 };
@@ -103,7 +106,7 @@ const deleteAdministradora = (request, response) => {
           });
         } else
           response.status(200).send({
-            message: "Removed Admin",
+            message: "Administradora removida",
           });
       });
     }

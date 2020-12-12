@@ -78,7 +78,8 @@ npm star
 ```
 O servidor iniciará na porta:5002
 
-Caso queria começar do início e apenas se guiar por aqui, lembre-se de usar o npm init, antes de instalar as depêndencias a serem utilizadas.
+Quando estiver com o projeto aberto no ambiente, crie na raiz o arquivo .env, e copie tudo que está no .env.example para ele. Assim, você conseguirá fazer o projeto funcionar localmente.
+
 
 <h3>Dependências</h3>
 
@@ -98,39 +99,40 @@ Importante saber: É possível que em outra máquina a porta esteja sendo utiliz
 
 Para alimentar o banco de dados, a API foi dividida em duas collections: A primeira destina-se a coletar as informações necessárias ao cadastro dos profissionais, contendo atributos como nome, área de atuação, localidade. Já a segunda, refere-se às administradoras do banco de dados.
 
-No intuito de garantir a segurança dos dados coletados e sua manipulação restrita, apenas as rotas que retornam listas, ou seja, aquelas do método GET que não faz qualquer alteração dos dados, não necessitam de **_token_** de autorização, para as demais a autorização e autenticação são exigidas.
+No intuito de garantir a segurança dos dados coletados e sua manipulação restrita, as rotas que retornam listas e que não fazem qualquer alteração dos dados dos profissionais, não necessitam de **_token_** de autorização.
+Para as demais, incluindo o GET Administradoras, a autorização e autenticação são exigidas. As rotas que necessitam de autorização seguem sinalizadas com um ( * ).
 
 ## Profissionais
 
 ---
-| Verbo    | Método     | Recurso              | Descrição                                       |
-| -------- | ---------- | -------------------- | ----------------------------------------------- |
-| 1.POST   | createNew  | `/profissionais`     | Cadastrar novo profissional                     |
-| 2.GET    | selectAll  | `/profissionais`     | Retornar todos os profissionais cadastrados     |
-| 3.PUT    | updateById | `/profissionais/:id` | Substituir/Atualizar informações de um registro |
-| 4.DELETE | deleteById | `/profissionais/:id` | Excluir um cadastro específico                  |
+| Verbo    | Recurso              | Descrição                                       |
+| -------- | -------------------- | ----------------------------------------------- |
+| 1.POST*  | `/profissionais`     | Cadastrar novo profissional                     |
+| 2.GET    | `/profissionais`     | Retornar todos os profissionais cadastrados     |
+| 3.PUT*   | `/profissionais/:id` | Substituir/Atualizar informações de um registro |
+| 4.DELETE*| `/profissionais/:id` | Excluir um cadastro específico                  |
 ---
 
 ---
-| Verbo | Método          | Recurso                           | Descrição                                               |
-| ----- | --------------- | --------------------------------- | ------------------------------------------------------- |
-| 1.GET | selectById      | `/profissionais`                  | Retornar um profissional por id                         |
-| 2.GET | selectByName    | `/profissionais/name/:name`       | Retornar um profissional por nome                       |
-| 3.GET | selectBySubarea | `/profissionais/subarea/:subarea` | Retornar os profissionais por área e subárea de atuação |
-| 4.GET | selectByAddress | `/profissionais/city/:city`       | Retornar um profissional pelo local de atuação          |
-| 5.GET | filterAdm       | `/profissionais/admId/:admId`     | Retornar os profissionais cadastrados por cada Adm.     |
+| Verbo |   Recurso                         | Descrição                                               |
+| ----- |   ------------------------------- | ------------------------------------------------------- |
+| 1.GET | `/profissionais`                  | Retornar um profissional por id                         |
+| 2.GET | `/profissionais/name/:name`       | Retornar um profissional por nome                       |
+| 3.GET | `/profissionais/subarea/:subarea` | Retornar os profissionais por área e subárea de atuação |
+| 4.GET | `/profissionais/city/:city`       | Retornar um profissional pelo local de atuação          |
+| 5.GET | `/profissionais/admId/:admId`     | Retornar os profissionais cadastrados por cada Adm.     |
 ---
 
 ## Administradoras
 
 ---
-| Verbo    | Método    | Recurso                  | Descrição                                  |
-| -------- | --------- | ------------------------ | ------------------------------------------ |
-| 1.GET    | createNew | `/administradoras`       | Cadastrar nova administradora              |
-| 2.POST   | selectAll | `/administradoras`       | Retorna as administradoras cadastradas     |
-| 3.POST   | login     | `/administradoras/login` | Acesso ao banco pelas administradoras      |
-| 4.PUT    | update    | `/administradoras/:id`   | Atualizar o cadastro de uma administradora |
-| 5.DELETE | delete    | `/administradoras/:id`   | Exclui uma administradora cadastrada       |
+| Verbo    | Recurso                  | Descrição                                  |
+| -------- | ------------------------ | ------------------------------------------ |
+| 1.POST   | `/administradoras`       | Retorna as administradoras cadastradas     |
+| 2.POST   | `/administradoras/login` | Acesso ao banco pelas administradoras      |
+| 3.GET*   | `/administradoras`       | Cadastrar nova administradora              |
+| 4.PUT*   | `/administradoras/:id`   | Atualizar o cadastro de uma administradora |
+| 5.DELETE*| `/administradoras/:id`   | Exclui uma administradora cadastrada       |
 ---
 
 <h2>Testes</h2>

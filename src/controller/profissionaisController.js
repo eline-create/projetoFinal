@@ -61,7 +61,7 @@ const updateById = (request, response) => {
           });
         }
         return response.status(200).send({
-          message: "Registro alterado com sucesso",
+          message: "Registro alterado com sucesso!",
         });
       });
     } else {
