@@ -21,6 +21,7 @@ O que você encontra aqui:
    * [Rotas da API](#Rotas-da-API)
    * [Testes](#testes)
    * [Se liga nas dicas](#Se-liga-nas-dicas)
+   * [Agradecimentos](#Agradecimentos)
    * [Referências](#Referências)
 <!--te-->
 
@@ -153,6 +154,13 @@ Assim que o link for acessado o primeiro endpoint que é um ("/")retornará o in
 2. Para gerar a chave privada, pode usar esse [site](https://travistidwell.com/jsencrypt/demo/);
 3. Para fazer um bom readme com o [Rocketseat](https://blog.rocketseat.com.br/como-fazer-um-bom-readme/#Sobre);
 4. Comandos utéis do Git [Git - comandos utéis](https://gist.github.com/leocomelli/2545add34e4fec21ec16)
+
+<h3>Agradecimentos</h3>
+
+Agradeço a todes as Mulheres, Anjes Maravilhoses que contribuíram para que eu pudesse chegar até aqui.
+Não há palavra melhor para representar o fim deste ciclo, se não a Gratidão!
+
+Reprograma e Porto Digital/M.I.N.A.s, à oportunidade dada por estar em um curso de tanta pluralidade e singularidade, é imensurável. Que esta parceria renda muitos frutos e que este seja apenas o primeiro.
 
 
 ### Referências:
