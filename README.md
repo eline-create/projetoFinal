@@ -36,7 +36,7 @@ Sabe-se que história dos negros no Brasil é permeada pela escravização de po
 
 Apesar de a mudança ser lenta, mediante tantos anos de história, mais negros estão conseguindo se qualificar. No entanto, ainda é difícil encontrar - em qualquer esfera - tais profissionais sem que se faça uma busca minuciosa.
 
-Para alimentar o banco de dados, utilizo de um questionários do [Google Forms](https://docs.google.com/forms/d/1yj_WdolrFi4qwWRBJpu_f_IlDVk0qYTy_JKB2fc8ha8/edit) e busco em site de buscas e nas redes sociais.
+Para alimentar o banco de dados, utilizo de um questionário do [Google Forms](https://docs.google.com/forms/d/1yj_WdolrFi4qwWRBJpu_f_IlDVk0qYTy_JKB2fc8ha8/edit), além de site de buscas e redes sociais.
 
 <h2>Sobre a População Brasileira</h2>
 
