@@ -34,7 +34,9 @@ O propósito aqui é de que pessoas que desejem, se sintam confortáveis ou até
 
 Sabe-se que história dos negros no Brasil é permeada pela escravização de povos vindos do continente africano, estupro por meio de reprodução forçada e muito trabalho pesado não remunerado. Com a abolição da escravatura, os negros foram jogados nas ruas sem trabalho. Sem condições para viver, ocuparam as áreas marginalizadas das cidades. Além do fato, de terem sido inferiorizados e discriminados, durante muitos anos, esta parcela da população não teve condições para se profissionalizar e ocupar vagas de emprego melhores.
 
-Apesar de a mudança ser lenta, mediante tantos anos de história, mais negros estão conseguindo se qualificar. No entanto, ainda é difícil encontrar - em qualquer esfera - tais profissionais sem que se faça uma busca minuciosa. 
+Apesar de a mudança ser lenta, mediante tantos anos de história, mais negros estão conseguindo se qualificar. No entanto, ainda é difícil encontrar - em qualquer esfera - tais profissionais sem que se faça uma busca minuciosa.
+
+Para alimentar o banco de dados, utilizo de um questionários do [Google Forms](https://docs.google.com/forms/d/1yj_WdolrFi4qwWRBJpu_f_IlDVk0qYTy_JKB2fc8ha8/edit) e busco em site de buscas e nas redes sociais.
 
 <h2>Sobre a População Brasileira</h2>
 
@@ -66,7 +68,7 @@ Para este projeto inicializar, você precisará ter instalado em sua máquina:
 
 <h3>Comandos de Inicialização</h3>
 
-Após ter feito o fork e clone deste [repositório](https://github.com/eline-create/projetoFinal.git) em sua máquina para que o pacote node-modules fique ativo e você consiga utilizar todas as depências instaladas, você deve escrever no seu terminal, o comando:
+Após ter feito o fork e clone deste [repositório](https://github.com/eline-create/projetoFinal.git) em sua máquina para que o pacote node-modules fique ativo e você consiga utilizar todas as depências instaladas, você deve entrar na pasta do projeto, escrever no seu terminal, o comando:
 
 ```
 npm install

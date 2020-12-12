@@ -30,7 +30,7 @@ const createAdministradora = (request, response) => {
         if (error) {
           return response.status(500).send({ message: error.message });
         }
-        return response.status(201).send({ message: "Administradora criado com sucesso!" });        
+        return response.status(201).send({ message: "Administradora criada com sucesso!" });        
       });
     }
   });
