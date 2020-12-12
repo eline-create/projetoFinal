@@ -28,13 +28,13 @@ O que você encontra aqui:
 
 O **Negritude em Ação** é o projeto final do curso de Desenvolvimento Web em Back-End realizado pelo ***bootcamp*** da [Reprograma](https://reprograma.com.br/) em parceria com o [Projeto M.I.N.As/Porto Digital](https://www.portodigital.org/capital-humano/iniciativas-para-a-diversidade/mulheres-em-inovacao-negocios-e-artes-minas). Este projeto consiste na criação de uma API gerenciadora de um banco de dados que reune informações sobre profissionais heteroidentificados como negros(pretos e pardos). Não há distinção de campo de atuação porfissional, muito menos localidade. Conforme os dados são captados, seguem sendo inseridos no banco. 
 
-O propósito aqui é de que pessoas que desejem, se sintam confortáveis ou até que prefiram atendimento por profissionais negres e tenha dificuldades em encontrá-los, possa ter este problema resolvido.  
+O propósito aqui é de que pessoas que desejem, se sintam confortáveis ou até que prefiram atendimento por profissionais negres e tenha dificuldades em encontrá-los, possa encontrar com facilidade. Neste sentido, reforça-se que a importância em reunir o máximo de profissionais negres, facilitando o acesso aos diversos públicos e permitindo ampliar a divulgação de tais profissionais e seus trabalhos.  
 
 <h2>Contextualizando</h2>
 
 Sabe-se que história dos negros no Brasil é permeada pela escravização de povos vindos do continente africano, estupro por meio de reprodução forçada e muito trabalho pesado não remunerado. Com a abolição da escravatura, os negros foram jogados nas ruas sem trabalho. Sem condições para viver, ocuparam as áreas marginalizadas das cidades. Além do fato, de terem sido inferiorizados e discriminados, durante muitos anos, esta parcela da população não teve condições para se profissionalizar e ocupar vagas de emprego melhores.
 
-Apesar de a mudança ser lenta, mediante tantos anos de história, mais negros estão conseguindo se qualificar. No entanto, ainda é difícil encontrar tais profissionais sem que se faça uma busca minuciosa. Neste sentido, objetiva-se com este banco de dados reunir o máximo de profissionais negros, facilitando o acesso aos diversos públicos e permitindo ampliar a divulgação de tais profissionais e seus trabalhos.
+Apesar de a mudança ser lenta, mediante tantos anos de história, mais negros estão conseguindo se qualificar. No entanto, ainda é difícil encontrar - em qualquer esfera - tais profissionais sem que se faça uma busca minuciosa. 
 
 <h2>Sobre a População Brasileira</h2>
 
@@ -74,16 +74,16 @@ npm install
 Para executar a aplicação pelo terminal, use o comando:
 
 ```
-npm star
+npm start
 ```
 O servidor iniciará na porta:5002
 
-Quando estiver com o projeto aberto no ambiente, crie na raiz o arquivo .env, e copie tudo que está no .env.example para ele. Assim, você conseguirá fazer o projeto funcionar localmente.
+Quando estiver com o projeto aberto no ambiente, crie na raiz, o arquivo **.env**, e copie tudo que está no **.env.example** para ele. Assim, você conseguirá fazer o projeto funcionar localmente.
 
 
 <h3>Dependências</h3>
 
-Estas foram as depências utilizadas. Os procedimentos de instalação contam na documentação NPM de cada uma. Lembrando que a instalação só será necessária caso não queira iniciar um arquivo do zero. Para isso não esqueça do comando **npm init** antes de começar a instalas as mesmas.
+Estas foram as depências utilizadas. Os procedimentos de instalação constam na documentação NPM de cada uma. Lembrando que a instalação só será necessária, caso queira iniciar um projeto do zero. Para isso não esqueça do comando **npm init** antes de começar a instalar as mesmas.
 
 1. bcrypt
 2. dotenv-safe
@@ -94,13 +94,14 @@ Estas foram as depências utilizadas. Os procedimentos de instalação contam na
 
 <h2>Rotas da API</h2>
 
-A API está sendo escutada pela porta 5002, para as rotas serem acessadas localmente, faz-se necessário usar o endereço: http://localhost:5002/. Após a barra, é necessário acrescentar os caminhos do que se deseja acessar(Ver a coluna recursos dos quadros a seguir).
-Importante saber: É possível que em outra máquina a porta esteja sendo utilizada em outro aplicação. Basta alterar para outra como: 3000, 8000, 8080, 8083.
+A API está sendo escutada pela porta 5002. Para as rotas serem acessadas localmente, faz-se necessário usar o endereço: http://localhost:5002/. Após a barra, é necessário acrescentar os caminhos do que se deseja acessar(Ver a coluna recursos dos quadros a seguir).
 
-Para alimentar o banco de dados, a API foi dividida em duas collections: A primeira destina-se a coletar as informações necessárias ao cadastro dos profissionais, contendo atributos como nome, área de atuação, localidade. Já a segunda, refere-se às administradoras do banco de dados.
+Importante saber: É possível que em outra máquina a porta esteja sendo utilizada em outro aplicação. Basta alterar para portas como: 3000, 8000, 8080, 8083.
+
+Para alimentar o banco de dados, a API foi dividida em duas collections: A primeira destina-se às informações relacionadas aos profissionais, com um schema contendo atributos como nome, área de atuação, localidade. Já a segunda, refere-se às administradoras do banco de dados.
 
 No intuito de garantir a segurança dos dados coletados e sua manipulação restrita, as rotas que retornam listas e que não fazem qualquer alteração dos dados dos profissionais, não necessitam de **_token_** de autorização.
-Para as demais, incluindo o GET Administradoras, a autorização e autenticação são exigidas. As rotas que necessitam de autorização seguem sinalizadas com um ( * ).
+Para as demais, incluindo o GET Administradoras, a autorização e autenticação são exigidas. Para facilitar a identificação, as rotas que necessitam de autorização seguem sinalizadas com um ( * ).
 
 ## Profissionais
 
@@ -116,7 +117,7 @@ Para as demais, incluindo o GET Administradoras, a autorização e autenticaçã
 ---
 | Verbo |   Recurso                         | Descrição                                               |
 | ----- |   ------------------------------- | ------------------------------------------------------- |
-| 1.GET | `/profissionais`                  | Retornar um profissional por id                         |
+| 1.GET | `/profissionais/:id`              | Retornar um profissional por id                         |
 | 2.GET | `/profissionais/name/:name`       | Retornar um profissional por nome                       |
 | 3.GET | `/profissionais/subarea/:subarea` | Retornar os profissionais por área e subárea de atuação |
 | 4.GET | `/profissionais/city/:city`       | Retornar um profissional pelo local de atuação          |
@@ -139,7 +140,9 @@ Para as demais, incluindo o GET Administradoras, a autorização e autenticaçã
 
 Para testar a API em alguma ferramenta de testes e desenvolvimento de APIs, você pode fazer download das rotas organizadas através deste [link](https://www.getpostman.com/collections/3933ec0a5006252b83dd) do Postman. Não esqueça de configurar a porta/host que estará sendo usada no seu computador.
 
-O deploy do projeto foi feito no Heroku. Você pode encontrar através do link [Projeto Final](https://projetofinal-reprograma.herokuapp.com/) no Heroku.Esse link te levará ao index. 
+O deploy do projeto foi feito no Heroku. Você pode encontrar através do link [Projeto Final](https://projetofinal-reprograma.herokuapp.com/) no Heroku.
+
+Assim que o link for acessado o primeiro endpoint que é um ("/")retornará o index como resposta.
 
 
 <h2>Se liga nas dicas</h2>
@@ -169,6 +172,6 @@ O deploy do projeto foi feito no Heroku. Você pode encontrar através do link [
  <sub><b>Eline Pimentel</b></sub></a> 
 
 
-Feito com ❤️ por Eline Pimentel 
+Feito com ❤️  
 
-[![Linkedin Badge](https://img.shields.io/badge/-ElinePimentel-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/eline-silva-de-paula-pimentel/)](https://www.linkedin.com/in/eline-silva-de-paula-pimentel/) 
+[![Linkedin Badge](https://img.shields.io/badge/-Eline-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/eline-silva-de-paula-pimentel/)](https://www.linkedin.com/in/eline-silva-de-paula-pimentel/) 
