@@ -27,7 +27,7 @@ O que você encontra aqui:
 
 <h2>Apresentação</h2>
 
-O **Negritude em Ação** é o projeto final do curso de Desenvolvimento Web em Back-End realizado pelo ***bootcamp*** da [Reprograma](https://reprograma.com.br/) em parceria com o [Projeto M.I.N.As/Porto Digital](https://www.portodigital.org/capital-humano/iniciativas-para-a-diversidade/mulheres-em-inovacao-negocios-e-artes-minas). Este projeto consiste na criação de uma API gerenciadora de um banco de dados que reune informações sobre profissionais heteroidentificados como negros(pretos e pardos). Não há distinção de campo de atuação porfissional, muito menos localidade. Conforme os dados são captados, seguem sendo inseridos no banco. 
+O **Negritude em Ação** é o projeto final do curso de Desenvolvimento Web em Back-End realizado pelo ***bootcamp*** da [Reprograma](https://reprograma.com.br/) em parceria com o [Projeto M.I.N.As/Porto Digital](https://www.portodigital.org/capital-humano/iniciativas-para-a-diversidade/mulheres-em-inovacao-negocios-e-artes-minas). Este projeto consiste na criação de uma API gerenciadora de um banco de dados que reune informações sobre profissionais autodeclarados como negros(pretos e pardos). Não há distinção de campo de atuação porfissional, muito menos localidade. Conforme os dados são captados, seguem sendo inseridos no banco. 
 
 O propósito aqui é de que pessoas que desejem, se sintam confortáveis ou até que prefiram atendimento por profissionais negres e tenha dificuldades em encontrá-los, possa encontrar com facilidade. Neste sentido, reforça-se que a importância em reunir o máximo de profissionais negres, facilitando o acesso aos diversos públicos e permitindo ampliar a divulgação de tais profissionais e seus trabalhos.  
 
